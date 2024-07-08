@@ -9,6 +9,9 @@ https://www.dropbox.com/s/t2bo9ufvc3f8mbj/sleep_brainvision.zip?dl=1
 
 .. image:: ../../picture/picsleep/ex_LoadBrainVision.png
 """
+import sys
+sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
+
 import os
 from visbrain.gui import Sleep
 from visbrain.io import download_file, path_to_visbrain_data

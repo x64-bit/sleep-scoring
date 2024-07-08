@@ -9,6 +9,9 @@ https://www.dropbox.com/s/hc18bgn2hlnmiph/sleep_edf.zip?dl=1
 
 .. image:: ../../picture/picsleep/ex_load_rec.png
 """
+import sys
+sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
+
 import os
 
 from visbrain.gui import Sleep

@@ -4,6 +4,9 @@ Matplotlib plot of an hypnogram
 
 Plot a hypnogram using matplotlib.
 """
+import sys
+sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
+
 from visbrain.io import write_fig_hyp, read_hypno, download_file
 
 ###############################################################################

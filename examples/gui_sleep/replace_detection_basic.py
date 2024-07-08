@@ -19,6 +19,8 @@ https://www.dropbox.com/s/bj1ra95rbksukro/sleep_edf.zip?dl=1
 ###############################################################################
 # Load your file and create an instance of Sleep
 ###############################################################################
+import sys
+sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
 
 import os
 import numpy as np

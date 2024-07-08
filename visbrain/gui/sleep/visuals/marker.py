@@ -562,11 +562,12 @@ class MarkersVisual(Visual):
             face_color = face_color[0]
 
         n = len(pos)
-        data = np.zeros(n, dtype=[('a_position', np.float32, 3),
-                                  ('a_fg_color', np.float32, 4),
-                                  ('a_bg_color', np.float32, 4),
-                                  ('a_size', np.float32, 1),
-                                  ('a_edgewidth', np.float32, 1)])
+        # TODO: passing (type, shape) is deprecated, pass as (type, (shape)) instead
+        data = np.zeros(n, dtype=[('a_position', np.float32, (3,)),
+                                  ('a_fg_color', np.float32, (4,)),
+                                  ('a_bg_color', np.float32, (4,)),
+                                  ('a_size', np.float32, (1,)),
+                                  ('a_edgewidth', np.float32, (1,))])
         data['a_fg_color'] = edge_color
         data['a_bg_color'] = face_color
         if edge_width is not None:

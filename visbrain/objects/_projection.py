@@ -133,7 +133,8 @@ def _project_repartition(s_obj, v, radius, contribute=False):
     logger.info(PROJ_STR % (xyz.shape[0], 'repartition'))
     index_faced = v.shape[1]
     # Corticale repartition :
-    repartition = np.ma.zeros((v.shape[0], index_faced), dtype=np.int)
+    # TODO: changed from np.int to int
+    repartition = np.ma.zeros((v.shape[0], index_faced), dtype=int)
     if not xyz.size:
         logger.warn("Repartition ignored because no sources visibles and "
                     "not masked")
@@ -146,7 +147,8 @@ def _project_repartition(s_obj, v, radius, contribute=False):
 
         # =============== REPARTITION ===============
         # Sum over sources dimension :
-        sm = np.sum(mask, 1, dtype=np.int)
+        # TODO: changed from np.int to int
+        sm = np.sum(mask, 1, dtype=int)
         smmask = np.invert(sm.astype(bool))
         repartition[:, k] = np.ma.masked_array(sm, mask=smmask)
     s_obj._minmax = (repartition.min(), repartition.max())

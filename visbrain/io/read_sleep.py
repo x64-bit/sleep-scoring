@@ -614,7 +614,8 @@ def read_elan(path, downsample):
         start_time = datetime.time(0, 0, 0)
 
     # Channels
-    nb_chan = np.int(ent[9])
+    # TODO: changed from np.int to int
+    nb_chan = int(ent[9])
     nb_chan = nb_chan
 
     # Last 2 channels do not contain data
@@ -644,8 +645,10 @@ def read_elan(path, downsample):
     nb_bytes = os.path.getsize(path)
     nb_samples = int(nb_bytes / (nb_oct * nb_chan))
 
+    # TODO: bugfix: order should be string, not set
+    # ie changed from {'F'} to 'F'
     m_raw = np.memmap(path, dtype=formread, mode='r',
-                      shape=(nb_chan, nb_samples), order={'F'})
+                      shape=(nb_chan, nb_samples), order='F')
 
     # Get original signal length :
     n = m_raw.shape[1]

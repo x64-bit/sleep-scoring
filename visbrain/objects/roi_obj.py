@@ -564,7 +564,8 @@ class RoiObj(_Volume):
         return xyz
 
     def _select_roi(self, vol, level, smooth):
-        if isinstance(level, (int, np.int)):
+        # TODO: changed from np.int to int
+        if isinstance(level, (int, int)):
             condition = vol != level
         elif isinstance(level, float):
             condition = vol < level

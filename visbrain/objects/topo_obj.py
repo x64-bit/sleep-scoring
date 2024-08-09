@@ -9,7 +9,7 @@ from vispy.scene import visuals
 import vispy.visuals.transforms as vist
 
 from .visbrain_obj import VisbrainObject
-from ..objects import ConnectObj
+# from ..objects import ConnectObj
 from ..io import download_file, is_sc_image_installed
 from ..utils import (array2colormap, color2vb, mpl_cmap, normalize,
                      vpnormalize, vprecenter)
@@ -365,8 +365,8 @@ class TopoObj(VisbrainObject):
             object.
         """
         logger.info("    Connect channels")
-        self._connect = ConnectObj('ChanConnect', self._xyz, connect,
-                                   parent=self.node_chan, **kwargs)
+        # self._connect = ConnectObj('ChanConnect', self._xyz, connect,
+        #                            parent=self.node_chan, **kwargs)
 
     def _get_channel_coordinates(self, xyz, channels, system, unit):
         """Get channel coordinates.

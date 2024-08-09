@@ -10,6 +10,9 @@ Use and control image, time-frequency maps and spectrogram.
 
 .. image:: ../../picture/picobjects/ex_imtfspec_obj.png
 """
+import sys
+sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
+
 import numpy as np
 from visbrain.objects import (ImageObj, TimeFrequencyObj, ColorbarObj,
                               SceneObj)

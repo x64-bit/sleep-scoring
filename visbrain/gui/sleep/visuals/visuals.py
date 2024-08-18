@@ -273,8 +273,11 @@ class ChannelPlot(PrepareData):
 
             # ----------------------------------------------
             # Create a grid :
+            # grid = scene.visuals.GridLines(color=(.1, .1, .1, .5),
+            #                                scale=(1., .1),
+            #                                parent=parent[i].wc.scene)
             grid = scene.visuals.GridLines(color=(.1, .1, .1, .5),
-                                           scale=(1., .1),
+                                           scale=(1., .075),
                                            parent=parent[i].wc.scene)
             grid.set_gl_state('translucent')
             self.grid.append(grid)

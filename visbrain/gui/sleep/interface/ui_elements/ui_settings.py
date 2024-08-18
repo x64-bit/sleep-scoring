@@ -213,6 +213,11 @@ class UiSettings(object):
         for k in self._chan.grid:
             k.visible = viz
 
+    def _fcn_grid_scale(self):
+        scale = (1., self._SignV.value)
+        for k in self._chan.grid:
+            k.scale = scale
+
     # =====================================================================
     # RULER
     # =====================================================================

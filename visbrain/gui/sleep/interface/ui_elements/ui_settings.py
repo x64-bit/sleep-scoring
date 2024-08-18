@@ -216,10 +216,11 @@ class UiSettings(object):
             k.visible = viz
 
     # (port-visbrain)
-    def _fcn_grid_scale(self):
-        scale = (1., self._SignV.value)
+    def _fcn_grid_scale(self, value):
+        scale = (1., value)
         for k in self._chan.grid:
-            k.scale = scale
+            k.transform = vist.STTransform(scale=scale)
+            # k.scale = scale
 
     # =====================================================================
     # RULER

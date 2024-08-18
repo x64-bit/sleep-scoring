@@ -1840,6 +1840,8 @@ class Ui_MainWindow(object):
         self.horizontalLayout_22.addItem(spacerItem59)
         self.gridLayout_7.addLayout(self.horizontalLayout_22, 0, 0, 1, 20)
         self._SignV = QtWidgets.QDoubleSpinBox(self._slFrame)
+        self._SignV.setSingleStep(0.01)
+        self._SignV.setProperty("value", 0.4)
         self._SignV.setObjectName("_SignV")
         self.gridLayout_7.addWidget(self._SignV, 2, 15, 1, 1)
         self._SlGoto = QtWidgets.QDoubleSpinBox(self._slFrame)

@@ -31,6 +31,8 @@ class UiSettings(object):
         self._slRules.currentIndexChanged.connect(self._fcn_slider_move)
         # Grid toggle :
         self._slGrid.clicked.connect(self._fcn_grid_toggle)
+        # (port-visbrain) Grid scale change :
+        self._SignV.valueChanged.connect(self._fcn_grid_scale)
         # Text format :
         self._slTxtFormat = "Window : [ {start} ; {end} ] {unit} || " + \
                             "Sleep stage : {conv}"
@@ -212,6 +214,13 @@ class UiSettings(object):
         # Toggle grid for each channel :
         for k in self._chan.grid:
             k.visible = viz
+
+    # (port-visbrain)
+    def _fcn_grid_scale(self, value):
+        scale = (1., value)
+        for k in self._chan.grid:
+            k.transform = vist.STTransform(scale=scale)
+            # k.scale = scale
 
     # =====================================================================
     # RULER

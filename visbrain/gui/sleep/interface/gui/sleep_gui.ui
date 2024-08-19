@@ -12,8 +12,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1359</width>
-    <height>1116</height>
+    <width>1440</width>
+    <height>872</height>
    </rect>
   </property>
   <property name="font">
@@ -140,6 +140,8 @@
                  <property name="font">
                   <font>
                    <italic>true</italic>
+                   <stylestrategy>PreferDefault</stylestrategy>
+                   <kerning>true</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -251,8 +253,8 @@ type</string>
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>341</width>
-                        <height>657</height>
+                        <width>435</width>
+                        <height>300</height>
                        </rect>
                       </property>
                       <layout class="QVBoxLayout" name="verticalLayout_14">
@@ -525,6 +527,8 @@ type</string>
                           <property name="font">
                            <font>
                             <italic>true</italic>
+                            <stylestrategy>PreferDefault</stylestrategy>
+                            <kerning>true</kerning>
                            </font>
                           </property>
                           <property name="text">
@@ -590,6 +594,8 @@ type</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -616,6 +622,8 @@ channel</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -641,6 +649,8 @@ channel</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -686,6 +696,8 @@ channel</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -773,6 +785,8 @@ channel</string>
                       <property name="font">
                        <font>
                         <italic>true</italic>
+                        <stylestrategy>PreferDefault</stylestrategy>
+                        <kerning>true</kerning>
                        </font>
                       </property>
                       <property name="text">
@@ -842,6 +856,8 @@ channel</string>
                       <property name="font">
                        <font>
                         <italic>true</italic>
+                        <stylestrategy>PreferDefault</stylestrategy>
+                        <kerning>true</kerning>
                        </font>
                       </property>
                       <property name="text">
@@ -984,6 +1000,8 @@ channel</string>
                       <property name="font">
                        <font>
                         <italic>true</italic>
+                        <stylestrategy>PreferDefault</stylestrategy>
+                        <kerning>true</kerning>
                        </font>
                       </property>
                       <property name="text">
@@ -1009,6 +1027,8 @@ channel</string>
                       <property name="font">
                        <font>
                         <italic>true</italic>
+                        <stylestrategy>PreferDefault</stylestrategy>
+                        <kerning>true</kerning>
                        </font>
                       </property>
                       <property name="text">
@@ -1093,6 +1113,8 @@ channel</string>
                          <property name="font">
                           <font>
                            <italic>true</italic>
+                           <stylestrategy>PreferDefault</stylestrategy>
+                           <kerning>true</kerning>
                           </font>
                          </property>
                          <property name="text">
@@ -1190,6 +1212,8 @@ channel</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -1432,6 +1456,8 @@ channel</string>
                      <font>
                       <italic>true</italic>
                       <underline>false</underline>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -1568,6 +1594,8 @@ channel</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -1726,6 +1754,8 @@ channel</string>
                  <property name="font">
                   <font>
                    <italic>true</italic>
+                   <stylestrategy>PreferDefault</stylestrategy>
+                   <kerning>true</kerning>
                   </font>
                  </property>
                  <property name="text">
@@ -1784,6 +1814,8 @@ type</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -1955,6 +1987,8 @@ to</string>
                           <property name="font">
                            <font>
                             <italic>true</italic>
+                            <stylestrategy>PreferDefault</stylestrategy>
+                            <kerning>true</kerning>
                            </font>
                           </property>
                           <property name="text">
@@ -1967,6 +2001,8 @@ to</string>
                           <property name="font">
                            <font>
                             <italic>true</italic>
+                            <stylestrategy>PreferDefault</stylestrategy>
+                            <kerning>true</kerning>
                            </font>
                           </property>
                           <property name="text">
@@ -2005,6 +2041,8 @@ to</string>
                           <property name="font">
                            <font>
                             <italic>true</italic>
+                            <stylestrategy>PreferDefault</stylestrategy>
+                            <kerning>true</kerning>
                            </font>
                           </property>
                           <property name="text">
@@ -2030,6 +2068,8 @@ to</string>
                           <property name="font">
                            <font>
                             <italic>true</italic>
+                            <stylestrategy>PreferDefault</stylestrategy>
+                            <kerning>true</kerning>
                            </font>
                           </property>
                           <property name="text">
@@ -2334,6 +2374,8 @@ to</string>
                      <property name="font">
                       <font>
                        <italic>true</italic>
+                       <stylestrategy>PreferDefault</stylestrategy>
+                       <kerning>true</kerning>
                       </font>
                      </property>
                      <property name="text">
@@ -2453,6 +2495,8 @@ to</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -2465,6 +2509,8 @@ to</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -2557,7 +2603,7 @@ re-referenced</string>
                        <rect>
                         <x>0</x>
                         <y>0</y>
-                        <width>98</width>
+                        <width>443</width>
                         <height>298</height>
                        </rect>
                       </property>
@@ -2817,6 +2863,8 @@ re-referenced</string>
                        <property name="font">
                         <font>
                          <italic>true</italic>
+                         <stylestrategy>PreferDefault</stylestrategy>
+                         <kerning>true</kerning>
                         </font>
                        </property>
                        <property name="text">
@@ -2906,6 +2954,8 @@ re-referenced</string>
                        <property name="font">
                         <font>
                          <italic>true</italic>
+                         <stylestrategy>PreferDefault</stylestrategy>
+                         <kerning>true</kerning>
                         </font>
                        </property>
                        <property name="text">
@@ -3108,6 +3158,8 @@ on</string>
                            <property name="font">
                             <font>
                              <italic>true</italic>
+                             <stylestrategy>PreferDefault</stylestrategy>
+                             <kerning>true</kerning>
                             </font>
                            </property>
                            <property name="layoutDirection">
@@ -3223,6 +3275,8 @@ on</string>
                            <property name="font">
                             <font>
                              <italic>true</italic>
+                             <stylestrategy>PreferDefault</stylestrategy>
+                             <kerning>true</kerning>
                             </font>
                            </property>
                            <property name="text">
@@ -3366,6 +3420,8 @@ on</string>
                            <property name="font">
                             <font>
                              <italic>true</italic>
+                             <stylestrategy>PreferDefault</stylestrategy>
+                             <kerning>true</kerning>
                             </font>
                            </property>
                            <property name="text">
@@ -3539,6 +3595,8 @@ on</string>
                            <property name="font">
                             <font>
                              <italic>true</italic>
+                             <stylestrategy>PreferDefault</stylestrategy>
+                             <kerning>true</kerning>
                             </font>
                            </property>
                            <property name="text">
@@ -3667,6 +3725,8 @@ on</string>
                            <property name="font">
                             <font>
                              <italic>true</italic>
+                             <stylestrategy>PreferDefault</stylestrategy>
+                             <kerning>true</kerning>
                             </font>
                            </property>
                            <property name="text">
@@ -3786,6 +3846,8 @@ Twitches</string>
                            <property name="font">
                             <font>
                              <italic>true</italic>
+                             <stylestrategy>PreferDefault</stylestrategy>
+                             <kerning>true</kerning>
                             </font>
                            </property>
                            <property name="text">
@@ -3943,6 +4005,8 @@ Twitches</string>
                     <property name="font">
                      <font>
                       <italic>true</italic>
+                      <stylestrategy>PreferDefault</stylestrategy>
+                      <kerning>true</kerning>
                      </font>
                     </property>
                     <property name="text">
@@ -4234,6 +4298,8 @@ display</string>
                  <pointsize>12</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
+                 <stylestrategy>PreferDefault</stylestrategy>
+                 <kerning>true</kerning>
                 </font>
                </property>
                <property name="text">
@@ -4333,56 +4399,6 @@ display</string>
                <property name="verticalSpacing">
                 <number>9</number>
                </property>
-               <item row="2" column="8">
-                <widget class="QLabel" name="label_5">
-                 <property name="text">
-                  <string>Slider step</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="2">
-                <widget class="QLabel" name="label_12">
-                 <property name="text">
-                  <string>sec</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="1" column="0" colspan="18">
-                <widget class="QSlider" name="_SlVal">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="tickPosition">
-                  <enum>QSlider::NoTicks</enum>
-                 </property>
-                 <property name="tickInterval">
-                  <number>10</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="3">
-                <spacer name="horizontalSpacer_4">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeType">
-                  <enum>QSizePolicy::Maximum</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="2" column="10">
-                <widget class="QLabel" name="label_6">
-                 <property name="text">
-                  <string>sec</string>
-                 </property>
-                </widget>
-               </item>
                <item row="2" column="5">
                 <widget class="QDoubleSpinBox" name="_SigWin">
                  <property name="decimals">
@@ -4403,55 +4419,10 @@ display</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="15">
-                <widget class="QCheckBox" name="_slGrid">
+               <item row="2" column="12">
+                <widget class="QLabel" name="label_31">
                  <property name="text">
-                  <string>Grid</string>
-                 </property>
-                 <property name="checked">
-                  <bool>false</bool>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="11">
-                <spacer name="horizontalSpacer_6">
-                 <property name="orientation">
-                  <enum>Qt::Horizontal</enum>
-                 </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
-                 </property>
-                </spacer>
-               </item>
-               <item row="2" column="13">
-                <widget class="QComboBox" name="_slRules">
-                 <property name="currentIndex">
-                  <number>1</number>
-                 </property>
-                 <item>
-                  <property name="text">
-                   <string>seconds</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>minutes</string>
-                  </property>
-                 </item>
-                 <item>
-                  <property name="text">
-                   <string>hours</string>
-                  </property>
-                 </item>
-                </widget>
-               </item>
-               <item row="2" column="0">
-                <widget class="QLabel" name="label">
-                 <property name="text">
-                  <string>Go to</string>
+                  <string>Rule</string>
                  </property>
                 </widget>
                </item>
@@ -4471,6 +4442,70 @@ display</string>
                  </property>
                 </spacer>
                </item>
+               <item row="2" column="18">
+                <widget class="QCheckBox" name="_slAbsTime">
+                 <property name="text">
+                  <string>Absolute time</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="19">
+                <widget class="QCheckBox" name="_slMagnify">
+                 <property name="text">
+                  <string>Magnify</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="label">
+                 <property name="text">
+                  <string>Go to</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="8">
+                <widget class="QLabel" name="label_5">
+                 <property name="text">
+                  <string>Slider step</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="3">
+                <spacer name="horizontalSpacer_4">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeType">
+                  <enum>QSizePolicy::Maximum</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="11">
+                <spacer name="horizontalSpacer_6">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="10">
+                <widget class="QLabel" name="label_6">
+                 <property name="text">
+                  <string>sec</string>
+                 </property>
+                </widget>
+               </item>
                <item row="2" column="9">
                 <widget class="QDoubleSpinBox" name="_SigSlStep">
                  <property name="decimals">
@@ -4484,32 +4519,35 @@ display</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="1">
-                <widget class="QDoubleSpinBox" name="_SlGoto">
-                 <property name="decimals">
-                  <number>1</number>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="12">
-                <widget class="QLabel" name="label_31">
-                 <property name="text">
-                  <string>Rule</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="14">
-                <spacer name="horizontalSpacer_3">
+               <item row="1" column="0" colspan="20">
+                <widget class="QSlider" name="_SlVal">
                  <property name="orientation">
                   <enum>Qt::Horizontal</enum>
                  </property>
-                 <property name="sizeHint" stdset="0">
-                  <size>
-                   <width>40</width>
-                   <height>20</height>
-                  </size>
+                 <property name="tickPosition">
+                  <enum>QSlider::NoTicks</enum>
                  </property>
-                </spacer>
+                 <property name="tickInterval">
+                  <number>10</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="17">
+                <widget class="QCheckBox" name="_slGrid">
+                 <property name="text">
+                  <string>Grid</string>
+                 </property>
+                 <property name="checked">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="2">
+                <widget class="QLabel" name="label_12">
+                 <property name="text">
+                  <string>sec</string>
+                 </property>
+                </widget>
                </item>
                <item row="2" column="4">
                 <widget class="QLabel" name="label_3">
@@ -4518,21 +4556,7 @@ display</string>
                  </property>
                 </widget>
                </item>
-               <item row="2" column="17">
-                <widget class="QCheckBox" name="_slMagnify">
-                 <property name="text">
-                  <string>Magnify</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="2" column="16">
-                <widget class="QCheckBox" name="_slAbsTime">
-                 <property name="text">
-                  <string>Absolute time</string>
-                 </property>
-                </widget>
-               </item>
-               <item row="0" column="0" colspan="18">
+               <item row="0" column="0" colspan="20">
                 <layout class="QHBoxLayout" name="horizontalLayout_22">
                  <property name="topMargin">
                   <number>6</number>
@@ -4543,6 +4567,8 @@ display</string>
                     <font>
                      <weight>75</weight>
                      <bold>true</bold>
+                     <stylestrategy>PreferDefault</stylestrategy>
+                     <kerning>true</kerning>
                     </font>
                    </property>
                    <property name="text">
@@ -4614,6 +4640,65 @@ display</string>
                  </item>
                 </layout>
                </item>
+               <item row="2" column="15">
+                <widget class="QDoubleSpinBox" name="_SignV">
+                 <property name="singleStep">
+                  <double>0.010000000000000</double>
+                 </property>
+                 <property name="value">
+                  <double>1.000000000000000</double>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QDoubleSpinBox" name="_SlGoto">
+                 <property name="decimals">
+                  <number>1</number>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="14">
+                <spacer name="horizontalSpacer_3">
+                 <property name="orientation">
+                  <enum>Qt::Horizontal</enum>
+                 </property>
+                 <property name="sizeHint" stdset="0">
+                  <size>
+                   <width>40</width>
+                   <height>20</height>
+                  </size>
+                 </property>
+                </spacer>
+               </item>
+               <item row="2" column="13">
+                <widget class="QComboBox" name="_slRules">
+                 <property name="currentIndex">
+                  <number>1</number>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>seconds</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>minutes</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>hours</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item row="2" column="16">
+                <widget class="QLabel" name="label_2">
+                 <property name="text">
+                  <string>nV gridline</string>
+                 </property>
+                </widget>
+               </item>
               </layout>
              </item>
             </layout>
@@ -4645,8 +4730,8 @@ display</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1359</width>
-     <height>21</height>
+     <width>1440</width>
+     <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFiles">

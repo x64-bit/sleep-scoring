@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'sleep_gui.ui'
+# Form implementation generated from reading ui file '/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3/visbrain/gui/sleep/interface/gui/sleep_gui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -1841,7 +1841,7 @@ class Ui_MainWindow(object):
         self.gridLayout_7.addLayout(self.horizontalLayout_22, 0, 0, 1, 20)
         self._SignV = QtWidgets.QDoubleSpinBox(self._slFrame)
         self._SignV.setSingleStep(0.01)
-        self._SignV.setProperty("value", 0.4)
+        self._SignV.setProperty("value", 1.0)
         self._SignV.setObjectName("_SignV")
         self.gridLayout_7.addWidget(self._SignV, 2, 15, 1, 1)
         self._SlGoto = QtWidgets.QDoubleSpinBox(self._slFrame)

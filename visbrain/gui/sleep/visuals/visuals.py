@@ -628,6 +628,7 @@ class Hypnogram(object):
             Specify if hypnogram data have to be converted.
         """
         # Hypno conversion :
+        print("visuals.py/Hypnogram.set_data()")
         if (self._hconv != self._hconvinv) and convert:
             data = self.hyp_to_gui(data)
         # Build color array :
@@ -663,6 +664,9 @@ class Hypnogram(object):
         self.mesh.color[stfrom + 1:stend + 1, :] = self.color[stagec]
         # Only update the needed part :
         self.mesh.pos[stfrom:stend, 1] = -float(stagec)
+        # TODO: (port-visbrain) hacky way of forcing mesh to update
+        self.mesh.set_data(pos=self.mesh.pos, width=self.width,
+                           color=self.mesh.color)
         self.mesh.update()
 
     def set_grid(self, time, length=30., y=1.):

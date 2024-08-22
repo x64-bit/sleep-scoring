@@ -345,6 +345,7 @@ class ChannelPlot(PrepareData):
             # Get camera rectangle and set it:
             rect = (self.x[0], ycam[0], self.x[1] - self.x[0],
                     ycam[1] - ycam[0])
+            print("visuals.py/ChannelPlot.set_data(): rect:", rect)
             self._camera[i].rect = rect
             k.update()
             self.rect.append(rect)

@@ -59,7 +59,7 @@ class Detection(object):
             self[k] = {'index': np.array([]), 'color': col[k[1]],
                        'connect': np.array([]), 'sym': sym[k[1]]}
             par = parent[self.chans.index(k[0])]
-            if k[1] is not 'Peaks':
+            if k[1] != 'Peaks':
                 self.line[k] = scene.visuals.Line(method='gl', parent=par,
                                                   color=col[k[1]])
                 self.line[k].set_gl_state('translucent')
@@ -96,7 +96,7 @@ class Detection(object):
                 # Get the channel number :
                 nb = self.chans.index(k[0])
                 # Send data :
-                if k[1] is 'Peaks':
+                if k[1] == 'Peaks':
                     # Get index and channel number :
                     index = self[k]['index'][:, 0]
                     z = np.full(len(index), 2., dtype=np.float32)
@@ -198,7 +198,7 @@ class Detection(object):
             if nkey not in oldkeys:
                 # Update dict and line :
                 self.dict[nkey] = self.dict[k]
-                if k[1] is 'Peaks':
+                if k[1] == 'Peaks':
                     self.peaks[nkey] = self.peaks[k]
                     del self.peaks[k]
                 else:
@@ -628,7 +628,6 @@ class Hypnogram(object):
             Specify if hypnogram data have to be converted.
         """
         # Hypno conversion :
-        print("visuals.py/Hypnogram.set_data()")
         if (self._hconv != self._hconvinv) and convert:
             data = self.hyp_to_gui(data)
         # Build color array :
@@ -664,7 +663,7 @@ class Hypnogram(object):
         self.mesh.color[stfrom + 1:stend + 1, :] = self.color[stagec]
         # Only update the needed part :
         self.mesh.pos[stfrom:stend, 1] = -float(stagec)
-        # TODO: (port-visbrain) hacky way of forcing mesh to update
+        #(port-visbrain) hacky way of forcing mesh to update
         self.mesh.set_data(pos=self.mesh.pos, width=self.width,
                            color=self.mesh.color)
         self.mesh.update()

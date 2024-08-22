@@ -90,6 +90,20 @@ class UiMenu(HelpMenu):
 
     # ______________________ HYPNOGRAM ______________________
     def saveHypData(self, *args, filename=None, reply=None):  # noqa
+        def prompt_write_hypno(dialog_ext, version, filename, format):
+            # Open dialog window :
+            if filename is None:
+                filename = dialog_save(self, 'Save File', hyp_file, dialog_ext +
+                                    ";;All files (*.*)")
+            if filename:
+                info = {'Duration_sec': self._N * 1 / self._sfori}
+                if isinstance(self._file, str):
+                    info['Datafile'] = self._file
+
+                filename_no_ext, ext = os.path.splitext(filename)
+                write_hypno(filename_no_ext + format + ext, self._hypno, version=version, sf=self._sfori,
+                            npts=self._N, time=self._time, info=info)
+        
         """Save the hypnogram data either in a hyp or txt file."""
         # Define default filename for the hypnogram :
         if not isinstance(self._file, str):
@@ -98,33 +112,45 @@ class UiMenu(HelpMenu):
             hyp_file = os.path.basename(self._file) + '_hypno'
         # Version switch :
         if reply is None:
-            msg = ("Since release 0.4, hypnogram are exported using stage "
-                   "duration rather than point-per-second. This new format "
+            msg = ("Since release 0.4 of Sleep, hypnograms are exported using stage "
+                   "durations rather than point-per-second. This new format "
                    "avoids potential errors caused by downsampling and "
                    "confusion in the values assigned to each sleep stage. \n\n"
-                   "Click 'Yes' to use the new format and 'No' to use the old "
-                   "format. For more information, visit the doc at "
-                   "visbrain.org/sleep")
-            reply = QtWidgets.QMessageBox.question(self, 'Message', msg,
-                                                   QtWidgets.QMessageBox.Yes,
-                                                   QtWidgets.QMessageBox.No)
+                   "Click 'Yes' to use the new (v2) format and 'No' to use the old (v1) "
+                   "format. Alternatively, you can save both formats at once, and "
+                   "Sleep will label them appropriately.")
+            
+            msg_box = QtWidgets.QMessageBox()
+            button_yes = QtWidgets.QMessageBox.Yes
+            button_no = QtWidgets.QMessageBox.No
+            button_both = QtWidgets.QPushButton("Save both formats")
+            msg_box.addButton(button_yes)
+            msg_box.addButton(button_no)
+            msg_box.addButton(button_both, QtWidgets.QMessageBox.ActionRole)
+            msg_box.setText(msg)
+
+            reply = msg_box.exec()
+
         if reply == QtWidgets.QMessageBox.No:  # v1 = sample
             dialog_ext = "Text file (*.txt);;Elan file (*.hyp)"
             version = 'sample'
-        else:  # v2 = time
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="")
+        elif reply == QtWidgets.QMessageBox.Yes:  # v2 = time
             dialog_ext = ("Text file (*.txt);;Csv file (*.csv);;Excel file "
                           "(*.xlsx)")
             version = 'time'
-        # Open dialog window :
-        if filename is None:
-            filename = dialog_save(self, 'Save File', hyp_file, dialog_ext +
-                                   ";;All files (*.*)")
-        if filename:
-            info = {'Duration_sec': self._N * 1 / self._sfori}
-            if isinstance(self._file, str):
-                info['Datafile'] = self._file
-            write_hypno(filename, self._hypno, version=version, sf=self._sfori,
-                        npts=self._N, time=self._time, info=info)
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="")
+        else:
+            # v1
+            dialog_ext = "Text file (*.txt);;Elan file (*.hyp)"
+            version = 'sample'
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="-v1")
+            # v2
+            dialog_ext = ("Text file (*.txt);;Csv file (*.csv);;Excel file "
+                          "(*.xlsx)")
+            version = 'time'
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="-v2")
+        
 
     def _save_hyp_fig(self, *args, filename=None, **kwargs):
         """Save a 600 dpi .png figure of the hypnogram."""

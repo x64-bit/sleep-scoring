@@ -99,8 +99,11 @@ class UiMenu(HelpMenu):
                 info = {'Duration_sec': self._N * 1 / self._sfori}
                 if isinstance(self._file, str):
                     info['Datafile'] = self._file
-                write_hypno(filename + format, self._hypno, version=version, sf=self._sfori,
+
+                filename_no_ext, ext = os.path.splitext(filename)
+                write_hypno(filename_no_ext + format + ext, self._hypno, version=version, sf=self._sfori,
                             npts=self._N, time=self._time, info=info)
+        
         """Save the hypnogram data either in a hyp or txt file."""
         # Define default filename for the hypnogram :
         if not isinstance(self._file, str):
@@ -109,13 +112,13 @@ class UiMenu(HelpMenu):
             hyp_file = os.path.basename(self._file) + '_hypno'
         # Version switch :
         if reply is None:
-            msg = ("Since release 0.4, hypnogram are exported using stage "
-                   "duration rather than point-per-second. This new format "
+            msg = ("Since release 0.4 of Sleep, hypnograms are exported using stage "
+                   "durations rather than point-per-second. This new format "
                    "avoids potential errors caused by downsampling and "
                    "confusion in the values assigned to each sleep stage. \n\n"
-                   "Click 'Yes' to use the new format and 'No' to use the old "
-                   "format. For more information, visit the doc at "
-                   "visbrain.org/sleep")
+                   "Click 'Yes' to use the new (v2) format and 'No' to use the old (v1) "
+                   "format. Alternatively, you can save both formats at once, and "
+                   "Sleep will label them appropriately.")
             
             msg_box = QtWidgets.QMessageBox()
             button_yes = QtWidgets.QMessageBox.Yes
@@ -127,29 +130,26 @@ class UiMenu(HelpMenu):
             msg_box.setText(msg)
 
             reply = msg_box.exec()
-            
-            # reply = QtWidgets.QMessageBox.question(self, 'Message', msg,
-            #                                        QtWidgets.QMessageBox.Yes,
-            #                                        QtWidgets.QMessageBox.No)
-        if reply == QtWidgets.QMessageBox.Action:
+
+        if reply == QtWidgets.QMessageBox.No:  # v1 = sample
+            dialog_ext = "Text file (*.txt);;Elan file (*.hyp)"
+            version = 'sample'
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="")
+        elif reply == QtWidgets.QMessageBox.Yes:  # v2 = time
+            dialog_ext = ("Text file (*.txt);;Csv file (*.csv);;Excel file "
+                          "(*.xlsx)")
+            version = 'time'
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="")
+        else:
             # v1
             dialog_ext = "Text file (*.txt);;Elan file (*.hyp)"
             version = 'sample'
-            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="v1")
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="-v1")
             # v2
             dialog_ext = ("Text file (*.txt);;Csv file (*.csv);;Excel file "
                           "(*.xlsx)")
             version = 'time'
-            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="v2")
-        elif reply == QtWidgets.QMessageBox.No:  # v1 = sample
-            dialog_ext = "Text file (*.txt);;Elan file (*.hyp)"
-            version = 'sample'
-            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="")
-        else:  # v2 = time
-            dialog_ext = ("Text file (*.txt);;Csv file (*.csv);;Excel file "
-                          "(*.xlsx)")
-            version = 'time'
-            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="")
+            prompt_write_hypno(dialog_ext=dialog_ext, version=version, filename=filename, format="-v2")
         
 
     def _save_hyp_fig(self, *args, filename=None, **kwargs):

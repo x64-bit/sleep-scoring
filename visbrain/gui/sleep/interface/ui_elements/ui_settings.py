@@ -70,7 +70,7 @@ class UiSettings(object):
         # ---------------------------------------
         # Update display signal :
         sl = slice(t[0], t[1])
-        self._chan.set_data(self._sf, self._data, self._time, sl=sl,
+        self._chan.set_data(self._sf, self._data, self._hypno, self._time, sl=sl,
                             ylim=self._ylims)
 
         # ---------------------------------------

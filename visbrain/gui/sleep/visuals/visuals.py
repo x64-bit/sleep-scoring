@@ -10,6 +10,8 @@ import logging
 
 from vispy import scene
 import vispy.visuals.transforms as vist
+from vispy.scene.visuals import Polygon
+from vispy.color import Color
 
 from .marker import Markers
 from visbrain.utils import (color2vb, PrepareData, cmap_to_glsl)
@@ -289,7 +291,7 @@ class ChannelPlot(PrepareData):
         """Return the number of channels."""
         return len(self.mesh)
 
-    def set_data(self, sf, data, time, sl=None, ylim=None, autoamp=True):
+    def set_data(self, sf, data, hypno, time, sl=None, ylim=None, autoamp=True):
         """Set data to channels.
 
         Parameters
@@ -313,6 +315,9 @@ class ChannelPlot(PrepareData):
         time_sl = time[sl]
         self.x = (time_sl.min(), time_sl.max())
         data_sl = data[self.visible, sl]
+        # TODO: (port-visbrain)
+        hypno_sl = hypno[sl]
+        # fill axis with halfway stuff
         z = np.full_like(time_sl, .5, dtype=np.float32)
 
         # Prepare the data (only if needed) :
@@ -335,8 +340,15 @@ class ChannelPlot(PrepareData):
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
 
-            # Set main ligne :
+            # Set main line :
             k.set_data(dat, width=self.width)
+
+            # calculate % of bar x-axis along which change in stage occurs
+            change_points = np.where(np.diff(hypno_sl) != 0)[0]
+            for i in range(len(change_points)):
+                change_points[i] = change_points[i] / len(hypno_sl)
+
+            change_points = np.concatenate([[0],change_points,[1]])
 
             # ________ CAMERA ________
             # Use either auto / fixed adaptative camera :
@@ -346,6 +358,31 @@ class ChannelPlot(PrepareData):
             rect = (self.x[0], ycam[0], self.x[1] - self.x[0],
                     ycam[1] - ycam[0])
             self._camera[i].rect = rect
+
+            epoch_rect_arr = []
+
+            for i in range(len(change_points)-1):
+                left = self.x[0] + (self.x[1] - self.x[0]) * change_points[i]
+                right = self.x[0] + (self.x[1] - self.x[0]) * change_points[i+1]
+                width = right - left
+
+                epoch_rect = [
+                    (left, ycam[0]),
+                    (right, ycam[0]),
+                    (right, ycam[1]),
+                    (left, ycam[1])
+                ]
+                epoch_rect_arr.append(epoch_rect)
+
+            red = Color("#e74c3c")
+            white = Color("#ecf0f1")
+            if epoch_rect_arr:
+                print("visuals.py/ChannelPlot.set_data(), epoch_rect_arr has elements") 
+            for epoch_rect in epoch_rect_arr:
+                # print("visuals.py/ChannelPlot.set_data(), epoch_rect:", epoch_rect)
+                poly = Polygon(epoch_rect, color=red, border_color=white,
+                                border_width=3, parent=k.parent)
+
             k.update()
             self.rect.append(rect)
 

@@ -346,14 +346,18 @@ class ChannelPlot(PrepareData):
 
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
+            # Set main line :
+            k.set_data(dat, width=self.width)
 
             # calculate % of bar x-axis along which change in stage occurs
-            change_points = np.where(np.diff(hypno_sl) != 0)[0]
-            for i in range(len(change_points)):
-                change_points[i] = change_points[i] / len(hypno_sl)
+            change_points = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
+            # TODO: (port-visbrain): don't use variable i because already used by
+            # outer for loop
+            for pt_i in range(len(change_points)):
+                change_points[pt_i] = change_points[pt_i] / len(hypno_sl)
 
             change_points = np.concatenate([[0],change_points,[1]])
-            stages = [hypno[i] for i in change_points]
+            stages = [hypno[pt_i] for pt_i in change_points]
             # change_points doesn't include the last stage, so get the stage
             # on the index after the last change point to get the color of the last stage
             stages.append(hypno[change_points[-1] + 1])
@@ -392,8 +396,6 @@ class ChannelPlot(PrepareData):
             
             print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i])) 
 
-            # Set main line :
-            k.set_data(dat, width=self.width)
             k.update()
             self.rect.append(rect)
 

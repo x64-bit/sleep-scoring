@@ -242,6 +242,7 @@ class ChannelPlot(PrepareData):
         # Create one line per channel :
         pos = np.zeros((1, 3), dtype=np.float32)
         self.mesh, self.report, self.grid, self.peak = [], [], [], []
+        self.epoch_underlays = [[] for i in range(len(channels))]
         self.loc, self.node = [], []
         for i, k in enumerate(channels):
             # ----------------------------------------------
@@ -337,11 +338,14 @@ class ChannelPlot(PrepareData):
             # Select channel ;
             datchan = data_sl[l, :]
 
+            # delete all underlays
+            # TODO: garbage collection lag?
+            for poly in self.epoch_underlays[i]:
+                poly.parent = None
+            self.epoch_underlays[i] = []
+
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
-
-            # Set main line :
-            k.set_data(dat, width=self.width)
 
             # calculate % of bar x-axis along which change in stage occurs
             change_points = np.where(np.diff(hypno_sl) != 0)[0]
@@ -349,6 +353,10 @@ class ChannelPlot(PrepareData):
                 change_points[i] = change_points[i] / len(hypno_sl)
 
             change_points = np.concatenate([[0],change_points,[1]])
+            stages = [hypno[i] for i in change_points]
+            # change_points doesn't include the last stage, so get the stage
+            # on the index after the last change point to get the color of the last stage
+            stages.append(hypno[change_points[-1] + 1])
 
             # ________ CAMERA ________
             # Use either auto / fixed adaptative camera :
@@ -376,13 +384,16 @@ class ChannelPlot(PrepareData):
 
             red = Color("#e74c3c")
             white = Color("#ecf0f1")
-            if epoch_rect_arr:
-                print("visuals.py/ChannelPlot.set_data(), epoch_rect_arr has elements") 
             for epoch_rect in epoch_rect_arr:
                 # print("visuals.py/ChannelPlot.set_data(), epoch_rect:", epoch_rect)
                 poly = Polygon(epoch_rect, color=red, border_color=white,
                                 border_width=3, parent=k.parent)
+                self.epoch_underlays[i].append(poly)
+            
+            print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i])) 
 
+            # Set main line :
+            k.set_data(dat, width=self.width)
             k.update()
             self.rect.append(rect)
 

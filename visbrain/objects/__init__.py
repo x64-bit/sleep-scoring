@@ -15,4 +15,4 @@ from .topo_obj import TopoObj  # noqa
 from .ts3d_obj import TimeSeries3DObj, CombineTimeSeries  # noqa
 from .vector_obj import VectorObj, CombineVectors  # noqa
 from .visbrain_obj import VisbrainObject, CombineObjects  # noqa
-from .volume_obj import VolumeObj  # noqa
+# from .volume_obj import VolumeObj  # noqa

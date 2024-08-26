@@ -33,6 +33,8 @@ class UiSettings(object):
         self._slGrid.clicked.connect(self._fcn_grid_toggle)
         # (port-visbrain) Grid scale change :
         self._SignV.valueChanged.connect(self._fcn_grid_scale)
+        # (port-visbrain) Channel stage coloring toggle :
+        self._slStageColors.clicked.connect(self._fcn_chan_stage_colors_toggle)
         # Text format :
         self._slTxtFormat = "Window : [ {start} ; {end} ] {unit} || " + \
                             "Sleep stage : {conv}"
@@ -70,7 +72,7 @@ class UiSettings(object):
         # ---------------------------------------
         # Update display signal :
         sl = slice(t[0], t[1])
-        self._chan.set_data(self._sf, self._data, self._time, sl=sl,
+        self._chan.set_data(self._sf, self._data, self._hypno, self._time, sl=sl,
                             ylim=self._ylims)
 
         # ---------------------------------------
@@ -263,6 +265,11 @@ class UiSettings(object):
         # Update scoring table :
         self._fcn_hypno_to_score()
         # self._fcn_score_to_hypno()
+
+    def _fcn_chan_stage_colors_toggle(self):
+        viz = self._slStageColors.isChecked()
+        self._chan.stage_colors_enabled = viz
+        self._fcn_slider_move()
 
     # =====================================================================
     # Annotate

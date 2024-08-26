@@ -10,6 +10,9 @@ import logging
 
 from vispy import scene
 import vispy.visuals.transforms as vist
+from vispy.scene.visuals import Polygon
+from vispy.color import Color
+from vispy.visuals.filters import Alpha
 
 from .marker import Markers
 from visbrain.utils import (color2vb, PrepareData, cmap_to_glsl)
@@ -232,6 +235,7 @@ class ChannelPlot(PrepareData):
         self._fcn = fcn
         self.visible = np.array([True] + [False] * (len(channels) - 1))
         self.consider = np.ones((len(channels),), dtype=bool)
+        self.stage_colors_enabled = False
 
         # Get color :
         self.color = color2vb(color)
@@ -239,8 +243,17 @@ class ChannelPlot(PrepareData):
 
         # Create one line per channel :
         pos = np.zeros((1, 3), dtype=np.float32)
-        self.mesh, self.report, self.grid, self.peak = [], [], [], []
+        self.mesh, self.report, self.grid, self.peak, self.stage_underlays = [], [], [], [], []
         self.loc, self.node = [], []
+
+        self.stage_colors = {}
+        self.stage_colors[0] = Color("#56bf8b") # wake
+        self.stage_colors[1] = Color("#aabcce") # N1
+        self.stage_colors[2] = Color("#405c79") # N2
+        self.stage_colors[3] = Color("#0b1c2c") # N3
+        self.stage_colors[4] = Color("#bf5656") # REM
+        self.stage_colors[-1] = Color("#8bbf56") # art
+
         for i, k in enumerate(channels):
             # ----------------------------------------------
             # Create a node parent :
@@ -249,9 +262,15 @@ class ChannelPlot(PrepareData):
             self.node.append(node)
 
             # ----------------------------------------------
+            # (port-visbrain) Create list for tracking stage coloring underlays
+            self.stage_underlays.append([])
+
+            # ----------------------------------------------
             # Create main line (for channel plot) :
             mesh = scene.visuals.Line(pos, name=k + 'plot', color=self.color,
                                       method=method, parent=node)
+            # force line on top of epoch coloring
+            mesh.transform = vist.STTransform(translate=(0, 0, -100))
             mesh.set_gl_state('translucent')
             self.mesh.append(mesh)
 
@@ -289,7 +308,7 @@ class ChannelPlot(PrepareData):
         """Return the number of channels."""
         return len(self.mesh)
 
-    def set_data(self, sf, data, time, sl=None, ylim=None, autoamp=True):
+    def set_data(self, sf, data, hypno, time, sl=None, ylim=None, autoamp=True):
         """Set data to channels.
 
         Parameters
@@ -313,6 +332,9 @@ class ChannelPlot(PrepareData):
         time_sl = time[sl]
         self.x = (time_sl.min(), time_sl.max())
         data_sl = data[self.visible, sl]
+        # TODO: (port-visbrain)
+        hypno_sl = hypno[sl]
+        # fill axis with halfway stuff
         z = np.full_like(time_sl, .5, dtype=np.float32)
 
         # Prepare the data (only if needed) :
@@ -335,9 +357,6 @@ class ChannelPlot(PrepareData):
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
 
-            # Set main ligne :
-            k.set_data(dat, width=self.width)
-
             # ________ CAMERA ________
             # Use either auto / fixed adaptative camera :
             ycam = (datchan.min(), datchan.max()) if self.autoamp else ylim[i]
@@ -346,6 +365,49 @@ class ChannelPlot(PrepareData):
             rect = (self.x[0], ycam[0], self.x[1] - self.x[0],
                     ycam[1] - ycam[0])
             self._camera[i].rect = rect
+
+            # delete all underlays
+            for poly in self.stage_underlays[i]:
+                poly.parent = None
+            self.stage_underlays[i] = []
+            if self.stage_colors_enabled:
+                # calculate % of bar x-axis along which change in stage occurs
+                change_points_idx = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
+                change_points = np.empty(0)
+                for pt_i in range(len(change_points_idx)):
+                    change_points = np.append(change_points, float(change_points_idx[pt_i]) / float(len(hypno_sl)))
+
+                change_points = np.concatenate([[0],change_points,[1]])
+                stages = [hypno_sl[pt_i] for pt_i in change_points_idx]
+                # change_points doesn't include the last stage, so get the stage
+                # on the index after the last change point to get the color of the last stage
+                stages.append(hypno_sl[-1:][0])
+
+                epoch_rect_arr = []
+
+                for pt_i in range(len(change_points)-1):
+                    left = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i]
+                    right = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i+1]
+                    width = right - left
+
+                    # z-value 100 to force under line
+                    epoch_rect = [
+                        (left, ycam[0], 100),
+                        (right, ycam[0], 100),
+                        (right, ycam[1], 100),
+                        (left, ycam[1], 100)
+                    ]
+                    epoch_rect_arr.append(epoch_rect)
+
+                for pt_i in range(len(epoch_rect_arr)):
+                    poly = Polygon(epoch_rect_arr[pt_i], color=self.stage_colors[stages[pt_i]], border_color="white",
+                                    border_width=3, parent=k.parent)
+                    # make transparent
+                    poly.attach(Alpha(0.4))
+                    self.stage_underlays[i].append(poly)
+
+            # Set main line :
+            k.set_data(dat, width=self.width)
             k.update()
             self.rect.append(rect)
 

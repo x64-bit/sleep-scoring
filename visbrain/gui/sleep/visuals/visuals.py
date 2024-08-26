@@ -241,8 +241,7 @@ class ChannelPlot(PrepareData):
 
         # Create one line per channel :
         pos = np.zeros((1, 3), dtype=np.float32)
-        self.mesh, self.report, self.grid, self.peak = [], [], [], []
-        self.epoch_underlays = [[] for i in range(len(channels))]
+        self.mesh, self.report, self.grid, self.peak, self.epoch_underlays = [], [], [], [], []
         self.loc, self.node = [], []
         for i, k in enumerate(channels):
             # ----------------------------------------------
@@ -250,6 +249,11 @@ class ChannelPlot(PrepareData):
             node = scene.Node(name=k + 'plot')
             node.parent = parent[i].wc.scene
             self.node.append(node)
+
+            # Create a node underneath the channel node for epoch underlays
+            epoch_underlay_node = scene.Node(name=k + 'epoch_underlays')
+            epoch_underlay_node.parent = node
+            self.epoch_underlays.append(epoch_underlay_node)
 
             # ----------------------------------------------
             # Create main line (for channel plot) :
@@ -340,9 +344,10 @@ class ChannelPlot(PrepareData):
 
             # delete all underlays
             # TODO: garbage collection lag?
-            for poly in self.epoch_underlays[i]:
+            # print("visuals.py/ChannelPlot.set_data(), underlay children count:", len(self.epoch_underlays[i].children)) 
+            for poly in self.epoch_underlays[i].children:
                 poly.parent = None
-            self.epoch_underlays[i] = []
+            # self.epoch_underlays[i]
 
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
@@ -350,17 +355,21 @@ class ChannelPlot(PrepareData):
             k.set_data(dat, width=self.width)
 
             # calculate % of bar x-axis along which change in stage occurs
-            change_points = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
+            change_points_idx = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
+            # print("visuals.py/ChannelPlot.set_data(), raw change_points:", change_points_idx)
             # TODO: (port-visbrain): don't use variable i because already used by
             # outer for loop
-            for pt_i in range(len(change_points)):
-                change_points[pt_i] = change_points[pt_i] / len(hypno_sl)
+            change_points = np.empty(0)
+            for pt_i in range(len(change_points_idx)):
+                # print("visuals.py/ChannelPlot.set_data(), float(len(hypno_sl):", float(len(hypno_sl)))
+                change_points = np.append(change_points, float(change_points_idx[pt_i]) / float(len(hypno_sl)))
+                # print("visuals.py/ChannelPlot.set_data(), change_points[pt_i]:", change_points[pt_i])
 
             change_points = np.concatenate([[0],change_points,[1]])
-            stages = [hypno[pt_i] for pt_i in change_points]
+            stages = [hypno[pt_i] for pt_i in change_points_idx]
             # change_points doesn't include the last stage, so get the stage
             # on the index after the last change point to get the color of the last stage
-            stages.append(hypno[change_points[-1] + 1])
+            # stages.append(hypno[change_points_idx[-1:] + 1][0])
 
             # ________ CAMERA ________
             # Use either auto / fixed adaptative camera :
@@ -372,11 +381,14 @@ class ChannelPlot(PrepareData):
             self._camera[i].rect = rect
 
             epoch_rect_arr = []
+            # print("visuals.py/ChannelPlot.set_data(), len(change_points):", len(change_points)) 
+            # print("visuals.py/ChannelPlot.set_data(), change_points:", change_points)
 
-            for i in range(len(change_points)-1):
-                left = self.x[0] + (self.x[1] - self.x[0]) * change_points[i]
-                right = self.x[0] + (self.x[1] - self.x[0]) * change_points[i+1]
+            for pt_i in range(len(change_points)-1):
+                left = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i]
+                right = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i+1]
                 width = right - left
+                # print("visuals.py/ChannelPlot.set_data(), underlay width:", width) 
 
                 epoch_rect = [
                     (left, ycam[0]),
@@ -388,13 +400,16 @@ class ChannelPlot(PrepareData):
 
             red = Color("#e74c3c")
             white = Color("#ecf0f1")
+            # print("visuals.py/ChannelPlot.set_data(), underlay channel count:", len(self.epoch_underlays)) 
+            # print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i].children)) 
+            # print("visuals.py/ChannelPlot.set_data(), epoch rect arr:", epoch_rect_arr) 
+            # print("visuals.py/ChannelPlot.set_data(), stages:", stages) 
+            # print(stages)
             for epoch_rect in epoch_rect_arr:
                 # print("visuals.py/ChannelPlot.set_data(), epoch_rect:", epoch_rect)
                 poly = Polygon(epoch_rect, color=red, border_color=white,
-                                border_width=3, parent=k.parent)
-                self.epoch_underlays[i].append(poly)
-            
-            print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i])) 
+                                border_width=3, parent=self.epoch_underlays[i])
+                # self.epoch_underlays[i].append(poly)
 
             k.update()
             self.rect.append(rect)

@@ -344,15 +344,14 @@ class ChannelPlot(PrepareData):
 
             # delete all underlays
             # TODO: garbage collection lag?
-            # print("visuals.py/ChannelPlot.set_data(), underlay children count:", len(self.epoch_underlays[i].children)) 
+            print("visuals.py/ChannelPlot.set_data(), underlay children count:", len(self.epoch_underlays[i].children)) 
+            print("visuals.py/ChannelPlot.set_data(), underlay children:", self.epoch_underlays[i].children)
             for poly in self.epoch_underlays[i].children:
                 poly.parent = None
             # self.epoch_underlays[i]
 
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
-            # Set main line :
-            k.set_data(dat, width=self.width)
 
             # calculate % of bar x-axis along which change in stage occurs
             change_points_idx = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
@@ -391,26 +390,30 @@ class ChannelPlot(PrepareData):
                 # print("visuals.py/ChannelPlot.set_data(), underlay width:", width) 
 
                 epoch_rect = [
-                    (left, ycam[0]),
-                    (right, ycam[0]),
-                    (right, ycam[1]),
-                    (left, ycam[1])
+                    (left, ycam[0], 1),
+                    (right, ycam[0], 1),
+                    (right, ycam[1], 1),
+                    (left, ycam[1], 1)
                 ]
                 epoch_rect_arr.append(epoch_rect)
 
             red = Color("#e74c3c")
             white = Color("#ecf0f1")
-            # print("visuals.py/ChannelPlot.set_data(), underlay channel count:", len(self.epoch_underlays)) 
-            # print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i].children)) 
-            # print("visuals.py/ChannelPlot.set_data(), epoch rect arr:", epoch_rect_arr) 
-            # print("visuals.py/ChannelPlot.set_data(), stages:", stages) 
-            # print(stages)
+            print("visuals.py/ChannelPlot.set_data(), underlay channel count:", len(self.epoch_underlays)) 
+            print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i].children)) 
+            print("visuals.py/ChannelPlot.set_data(), epoch rect arr:", epoch_rect_arr) 
+            print("visuals.py/ChannelPlot.set_data(), stages:", stages) 
+            print(stages)
             for epoch_rect in epoch_rect_arr:
                 # print("visuals.py/ChannelPlot.set_data(), epoch_rect:", epoch_rect)
                 poly = Polygon(epoch_rect, color=red, border_color=white,
                                 border_width=3, parent=self.epoch_underlays[i])
+                poly.order = -1
+                print("visuals.py/ChannelPlot.set_data(), poly.parent:", poly.parent) 
                 # self.epoch_underlays[i].append(poly)
 
+            # Set main line :
+            k.set_data(dat, width=self.width)
             k.update()
             self.rect.append(rect)
 

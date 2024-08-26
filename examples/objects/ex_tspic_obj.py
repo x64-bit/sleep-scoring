@@ -15,8 +15,8 @@ import numpy as np
 
 from scipy.signal import spectrogram
 
-from visbrain.objects import TimeSeries3DObj, Picture3DObj, SceneObj
-from visbrain.utils import generate_eeg
+from visbrain_sleep_port.objects import TimeSeries3DObj, Picture3DObj, SceneObj
+from visbrain_sleep_port.utils import generate_eeg
 
 
 ###############################################################################

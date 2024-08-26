@@ -15,8 +15,8 @@ object i.e :
 """
 import numpy as np
 
-from visbrain.objects import TopoObj, ColorbarObj, SceneObj
-from visbrain.io import download_file
+from visbrain_sleep_port.objects import TopoObj, ColorbarObj, SceneObj
+from visbrain_sleep_port.io import download_file
 
 ###############################################################################
 # Download data

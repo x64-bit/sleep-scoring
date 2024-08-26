@@ -29,8 +29,8 @@ sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
 import os
 import numpy as np
 
-from visbrain.gui import Sleep
-from visbrain.io import download_file, path_to_visbrain_data
+from visbrain_sleep_port.gui import Sleep
+from visbrain_sleep_port.io import download_file, path_to_visbrain_data
 
 from wonambi.detect.spindle import DetectSpindle, detect_Moelle2011
 from wonambi.detect.slowwave import DetectSlowWave, detect_Massimini2004

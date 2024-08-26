@@ -5,14 +5,15 @@ from setuptools import setup, find_packages
 
 __version__ = "0.4.3"
 NAME = 'visbrain'
-AUTHOR = "Visbrain developpers"
-MAINTAINER = "Etienne Combrisson"
-EMAIL = 'e.combrisson@gmail.com'
+AUTHOR = "Visbrain developers"
+MAINTAINER = "Anjo Pagdanganan"
+EMAIL = 'anjopag31@berkeley.edu'
 KEYWORDS = "brain MNI GPU visualization data OpenGL vispy neuroscience " + \
            "sleep data-mining"
-DESCRIPTION = "Hardware-accelerated visualization suite for " + \
-              "brain-data in Python"
-URL = 'http://visbrain.org/'
+# DESCRIPTION = "Hardware-accelerated visualization suite for " + \
+#               "brain-data in Python"
+DESCRIPTION = "Standalone version of Sleep module from Visbrain suite"
+# URL = 'http://visbrain.org/'
 DOWNLOAD_URL = "https://github.com/EtienneCmb/visbrain/archive/" + \
                "v" + __version__ + ".tar.gz"
 # Data path :
@@ -36,7 +37,7 @@ setup(
     author=AUTHOR,
     maintainer=MAINTAINER,
     author_email=EMAIL,
-    url=URL,
+    # url=URL,
     download_url=DOWNLOAD_URL,
     # PACKAGE / DATA
     packages=find_packages(),

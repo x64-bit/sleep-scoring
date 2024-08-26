@@ -14,6 +14,6 @@ Two windows will then appear :
 import sys
 sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
 
-from visbrain.gui import Sleep
+from visbrain_sleep_port.gui import Sleep
 
 Sleep().show()

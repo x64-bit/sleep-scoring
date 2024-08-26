@@ -14,7 +14,7 @@ import sys
 sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
 
 import numpy as np
-from visbrain.objects import (ImageObj, TimeFrequencyObj, ColorbarObj,
+from visbrain_sleep_port.objects import (ImageObj, TimeFrequencyObj, ColorbarObj,
                               SceneObj)
 
 ###############################################################################

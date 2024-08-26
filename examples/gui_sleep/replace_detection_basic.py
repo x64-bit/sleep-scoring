@@ -25,8 +25,8 @@ sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
 import os
 import numpy as np
 
-from visbrain.gui import Sleep
-from visbrain.io import download_file, path_to_visbrain_data
+from visbrain_sleep_port.gui import Sleep
+from visbrain_sleep_port.io import download_file, path_to_visbrain_data
 
 # Download the file :
 download_file('sleep_edf.zip', unzip=True, astype='example_data')

@@ -3,8 +3,8 @@
 import os
 from setuptools import setup, find_packages
 
-__version__ = "0.4.3"
-NAME = 'visbrain'
+__version__ = "0.0.1"
+NAME = 'visbrain-sleep-port'
 AUTHOR = "Visbrain developers"
 MAINTAINER = "Anjo Pagdanganan"
 EMAIL = 'anjopag31@berkeley.edu'

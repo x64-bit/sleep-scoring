@@ -9,9 +9,6 @@ https://www.dropbox.com/s/bmfc2u55xsejbaf/sleep_matlab.zip?dl=1
 
 .. image:: ../../picture/picsleep/ex_LoadMatlab.png
 """
-import sys
-sys.path.append('/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3')
-
 import os
 import numpy as np
 from scipy.io import loadmat

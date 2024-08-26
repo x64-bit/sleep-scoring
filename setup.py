@@ -4,7 +4,7 @@ import os
 from setuptools import setup, find_packages
 
 __version__ = "0.0.1"
-NAME = 'visbrain-sleep-port'
+NAME = 'visbrain_sleep_port'
 AUTHOR = "Visbrain developers"
 MAINTAINER = "Anjo Pagdanganan"
 EMAIL = 'anjopag31@berkeley.edu'

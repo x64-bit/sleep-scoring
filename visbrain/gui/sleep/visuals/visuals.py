@@ -235,7 +235,7 @@ class ChannelPlot(PrepareData):
         self._fcn = fcn
         self.visible = np.array([True] + [False] * (len(channels) - 1))
         self.consider = np.ones((len(channels),), dtype=bool)
-        self.stage_colors_enabled = True
+        self.stage_colors_enabled = False
 
         # Get color :
         self.color = color2vb(color)
@@ -366,11 +366,11 @@ class ChannelPlot(PrepareData):
                     ycam[1] - ycam[0])
             self._camera[i].rect = rect
 
+            # delete all underlays
+            for poly in self.stage_underlays[i]:
+                poly.parent = None
+            self.stage_underlays[i] = []
             if self.stage_colors_enabled:
-                # delete all underlays
-                for poly in self.stage_underlays[i]:
-                    poly.parent = None
-                self.stage_underlays[i] = []
                 # calculate % of bar x-axis along which change in stage occurs
                 change_points_idx = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
                 change_points = np.empty(0)

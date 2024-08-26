@@ -235,6 +235,7 @@ class ChannelPlot(PrepareData):
         self._fcn = fcn
         self.visible = np.array([True] + [False] * (len(channels) - 1))
         self.consider = np.ones((len(channels),), dtype=bool)
+        self.stage_colors_enabled = True
 
         # Get color :
         self.color = color2vb(color)
@@ -242,7 +243,7 @@ class ChannelPlot(PrepareData):
 
         # Create one line per channel :
         pos = np.zeros((1, 3), dtype=np.float32)
-        self.mesh, self.report, self.grid, self.peak, self.epoch_underlays = [], [], [], [], []
+        self.mesh, self.report, self.grid, self.peak, self.stage_underlays = [], [], [], [], []
         self.loc, self.node = [], []
 
         self.stage_colors = {}
@@ -260,12 +261,9 @@ class ChannelPlot(PrepareData):
             node.parent = parent[i].wc.scene
             self.node.append(node)
 
-            # TODO: remove node structure
-            # Create a node underneath the channel node for epoch underlays
-            # epoch_underlay_node = scene.Node(name=k + 'epoch_underlays')
-            # epoch_underlay_node.parent = node
-            # self.epoch_underlays.append(epoch_underlay_node)
-            self.epoch_underlays.append([])
+            # ----------------------------------------------
+            # (port-visbrain) Create list for tracking stage coloring underlays
+            self.stage_underlays.append([])
 
             # ----------------------------------------------
             # Create main line (for channel plot) :
@@ -356,34 +354,8 @@ class ChannelPlot(PrepareData):
             # Select channel ;
             datchan = data_sl[l, :]
 
-            # delete all underlays
-            # TODO: garbage collection lag?
-            # print("visuals.py/ChannelPlot.set_data(), underlay children count:", len(self.epoch_underlays[i].children)) 
-            # print("visuals.py/ChannelPlot.set_data(), underlay children:", self.epoch_underlays[i].children)
-            for poly in self.epoch_underlays[i]:
-                poly.parent = None
-            self.epoch_underlays[i] = []
-
             # Concatenate time / data / z axis :
             dat = np.vstack((time_sl, datchan, z)).T
-
-            # calculate % of bar x-axis along which change in stage occurs
-            change_points_idx = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
-            # print("visuals.py/ChannelPlot.set_data(), raw change_points:", change_points_idx)
-            # TODO: (port-visbrain): don't use variable i because already used by
-            # outer for loop
-            change_points = np.empty(0)
-            for pt_i in range(len(change_points_idx)):
-                # print("visuals.py/ChannelPlot.set_data(), float(len(hypno_sl):", float(len(hypno_sl)))
-                change_points = np.append(change_points, float(change_points_idx[pt_i]) / float(len(hypno_sl)))
-                # print("visuals.py/ChannelPlot.set_data(), change_points[pt_i]:", change_points[pt_i])
-
-            change_points = np.concatenate([[0],change_points,[1]])
-            stages = [hypno_sl[pt_i] for pt_i in change_points_idx]
-            # change_points doesn't include the last stage, so get the stage
-            # on the index after the last change point to get the color of the last stage
-            stages.append(hypno_sl[-1:][0])
-
 
             # ________ CAMERA ________
             # Use either auto / fixed adaptative camera :
@@ -394,37 +366,45 @@ class ChannelPlot(PrepareData):
                     ycam[1] - ycam[0])
             self._camera[i].rect = rect
 
-            epoch_rect_arr = []
-            # print("visuals.py/ChannelPlot.set_data(), len(change_points):", len(change_points)) 
-            # print("visuals.py/ChannelPlot.set_data(), change_points:", change_points)
+            if self.stage_colors_enabled:
+                # delete all underlays
+                for poly in self.stage_underlays[i]:
+                    poly.parent = None
+                self.stage_underlays[i] = []
+                # calculate % of bar x-axis along which change in stage occurs
+                change_points_idx = np.copy(np.where(np.diff(hypno_sl) != 0)[0])
+                change_points = np.empty(0)
+                for pt_i in range(len(change_points_idx)):
+                    change_points = np.append(change_points, float(change_points_idx[pt_i]) / float(len(hypno_sl)))
 
-            for pt_i in range(len(change_points)-1):
-                left = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i]
-                right = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i+1]
-                width = right - left
-                # print("visuals.py/ChannelPlot.set_data(), underlay width:", width) 
+                change_points = np.concatenate([[0],change_points,[1]])
+                stages = [hypno_sl[pt_i] for pt_i in change_points_idx]
+                # change_points doesn't include the last stage, so get the stage
+                # on the index after the last change point to get the color of the last stage
+                stages.append(hypno_sl[-1:][0])
 
-                # z-value 100 to force under line
-                epoch_rect = [
-                    (left, ycam[0], 100),
-                    (right, ycam[0], 100),
-                    (right, ycam[1], 100),
-                    (left, ycam[1], 100)
-                ]
-                epoch_rect_arr.append(epoch_rect)
+                epoch_rect_arr = []
 
-            # print("visuals.py/ChannelPlot.set_data(), n1_color:", self.n1_color)
-            print("visuals.py/ChannelPlot.set_data(), underlay channel count:", len(self.epoch_underlays)) 
-            # print("visuals.py/ChannelPlot.set_data(), poly count:", len(self.epoch_underlays[i].children)) 
-            print("visuals.py/ChannelPlot.set_data(), epoch rect arr:", epoch_rect_arr) 
-            print("visuals.py/ChannelPlot.set_data(), stages:", stages) 
-            for pt_i in range(len(epoch_rect_arr)):
-                # print("visuals.py/ChannelPlot.set_data(), epoch_rect:", epoch_rect)
-                poly = Polygon(epoch_rect_arr[pt_i], color=self.stage_colors[stages[pt_i]], border_color="white",
-                                border_width=3, parent=k.parent)
-                poly.attach(Alpha(0.4))
-                # print("visuals.py/ChannelPlot.set_data(), poly.parent:", poly.parent) 
-                self.epoch_underlays[i].append(poly)
+                for pt_i in range(len(change_points)-1):
+                    left = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i]
+                    right = self.x[0] + (self.x[1] - self.x[0]) * change_points[pt_i+1]
+                    width = right - left
+
+                    # z-value 100 to force under line
+                    epoch_rect = [
+                        (left, ycam[0], 100),
+                        (right, ycam[0], 100),
+                        (right, ycam[1], 100),
+                        (left, ycam[1], 100)
+                    ]
+                    epoch_rect_arr.append(epoch_rect)
+
+                for pt_i in range(len(epoch_rect_arr)):
+                    poly = Polygon(epoch_rect_arr[pt_i], color=self.stage_colors[stages[pt_i]], border_color="white",
+                                    border_width=3, parent=k.parent)
+                    # make transparent
+                    poly.attach(Alpha(0.4))
+                    self.stage_underlays[i].append(poly)
 
             # Set main line :
             k.set_data(dat, width=self.width)
@@ -710,7 +690,6 @@ class Hypnogram(object):
             Specify if hypnogram data have to be converted.
         """
         # Hypno conversion :
-        print("visuals.py/Hypnogram.set_data()")
         if (self._hconv != self._hconvinv) and convert:
             data = self.hyp_to_gui(data)
         # Build color array :

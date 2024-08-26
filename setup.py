@@ -31,7 +31,7 @@ setup(
     name=NAME,
     version=__version__,
     description=DESCRIPTION,
-    long_description=read('README.rst'),
+    long_description=read('README.md'),
     keywords=KEYWORDS,
     license=read('LICENSE'),
     author=AUTHOR,

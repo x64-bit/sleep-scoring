@@ -2,7 +2,7 @@
 
 ## !! Under construction !!
 
-This port is a copy of Visbrain stripped down to only the parts relevant to the Sleep module.
+This is a modified version of Visbrain containing only the Sleep module.
 
 You can run the program from the .exe provided on the releases page, or you can check the examples folder to see how to deploy the code using python.
 

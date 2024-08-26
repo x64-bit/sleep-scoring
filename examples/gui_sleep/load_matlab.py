@@ -31,14 +31,6 @@ mat = loadmat(os.path.join(target_path, 's2_sleep.mat'))
 
 # Get the data, sampling frequency and channel names :
 raw_data = mat['data']
-# TODO: deprecated - not sure why
-"""
-DeprecationWarning: Conversion of an array with ndim > 0 to a scalar 
-is deprecated, and will error in future. Ensure you extract a single 
-element from your array before performing this operation. 
-(Deprecated NumPy 1.25.)
-  raw_sf = float(mat['sf'])
-"""
 raw_sf = float(mat['sf'])
 raw_channels = np.concatenate(mat['channels'].flatten()).tolist()
 raw_hypno = mat['hypno'].flatten()

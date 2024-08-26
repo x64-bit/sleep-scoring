@@ -131,7 +131,7 @@ class ReadSleepData(object):
         # ========================== CHECKING ==========================
         # ---------- DATA ----------
         # Check data shape :
-        if data.ndim is not 2:
+        if data.ndim != 2:
             raise ValueError("The data must be a 2D array")
         nchan, npts = data.shape
 
@@ -477,9 +477,9 @@ def read_bva(path, downsample, read_markers=False):
             marker_file = item.split('=')[1]
             marker_path = os.path.join(os.path.dirname(path), marker_file)
         elif 'NumberOfChannels=' in item:
-            n_chan = int(re.findall('\d+', item)[0])
+            n_chan = int(re.findall(r'\d+', item)[0])
         elif 'SamplingInterval=' in item:
-            si = float(re.findall("[-+]?\d*\.\d+|\d+", item)[0])
+            si = float(re.findall(r"[-+]?\d*\.\d+|\d+", item)[0])
             sf = 1 / (si * 0.000001)
         elif 'DataFormat' in item:
             data_format = item.split('=')[1]
@@ -499,7 +499,7 @@ def read_bva(path, downsample, read_markers=False):
     resolution = np.empty(shape=n_chan)
 
     for i, j in enumerate(range(start_label, start_label + n_chan)):
-        chan[i] = re.split('\W+', ent[j])[1]
+        chan[i] = re.split(r'\W+', ent[j])[1]
         resolution[i] = float(ent[j].split(",")[2])
 
     chan = np.array(list(chan.values())).flatten()
@@ -512,7 +512,7 @@ def read_bva(path, downsample, read_markers=False):
         # Read start-time
         for item in vmrk:
             if 'New Segment' in item:
-                st = re.split('\W+', item)[-1]
+                st = re.split(r'\W+', item)[-1]
                 start_time = datetime.time(int(st[8:10]), int(st[10:12]),
                                            int(st[12:14]))
                 break

@@ -112,13 +112,13 @@ def is_color(color, comefrom='color'):
     iscol : bool
         A boolean value to indicate if it is a color.
     """
-    if comefrom is 'color':
+    if comefrom == 'color':
         try:
             color2vb(color)
             iscol = True
         except:
             iscol = False
-    elif comefrom is 'textline':
+    elif comefrom == 'textline':
         try:
             color = color.replace("'", '')
             try:

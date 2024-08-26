@@ -46,7 +46,7 @@ class _Formatter(logging.Formatter):
         msg = record.getMessage()
         # If * in msg, set it in RED :
         if '*' in msg:
-            regexp = '\*.*?\*'
+            regexp = r'\*.*?\*'
             re_search = re.search(regexp, msg).group()
             to_color = COLOR_SEQ % (30 + RED) + re_search + COLOR_SEQ % (
                 30 + WHITE) + RESET_SEQ

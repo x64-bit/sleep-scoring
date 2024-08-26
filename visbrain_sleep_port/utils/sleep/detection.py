@@ -700,7 +700,7 @@ def peakdetect(sf, y_axis, x_axis=None, lookahead=200, delta=1., get='max',
 
     # ============== THRESHOLD ==============
     if threshold is not None:
-        if threshold is 'auto':
+        if threshold == 'auto':
             threshold = np.std(y_axis)
         # Detrend / demean y-axis :
         y_axisp = detrend(y_axis)

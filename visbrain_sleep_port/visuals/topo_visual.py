@@ -468,7 +468,7 @@ class TopoMesh(object):
         """
         # Get theta / phi :
         theta, phi = xyz[:, 0], xyz[:, 1]
-        if unit is 'degree':
+        if unit == 'degree':
             np.deg2rad(theta, out=theta)
             np.deg2rad(phi, out=phi)
         # Get radius :

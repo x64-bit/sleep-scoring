@@ -219,7 +219,7 @@ def color2vb(color=None, default=(1., 1., 1.), length=1, alpha=1.0,
                 alpha = color[-1]
                 color = color[0:-1]
             coltuple = color
-        elif isinstance(color, str) and (color[0] is not '#'):  # Matplotlib
+        elif isinstance(color, str) and (color[0] != '#'):  # Matplotlib
             # Check if the name is in the Matplotlib database :
             if color in mplcol.cnames.keys():
                 coltuple = mplcol.hex2color(mplcol.cnames[color])
@@ -227,7 +227,7 @@ def color2vb(color=None, default=(1., 1., 1.), length=1, alpha=1.0,
                 warn("The color name " + color + " is not in the matplotlib "
                      "database. Default color will be used instead.")
                 coltuple = default
-        elif isinstance(color, str) and (color[0] is '#'):  # Hexadecimal
+        elif isinstance(color, str) and (color[0] == '#'):  # Hexadecimal
             try:
                 coltuple = mplcol.hex2color(color)
             except:
@@ -494,9 +494,9 @@ def colorclip(x, th, kind='under'):
     x : array_like
         The clipping array.
     """
-    if kind is 'under':
+    if kind == 'under':
         idx = x < th
-    elif kind is 'over':
+    elif kind == 'over':
         idx = x > th
     x[idx] = th
     return x

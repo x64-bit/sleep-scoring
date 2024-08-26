@@ -66,9 +66,9 @@ class Edf:
 
             # parse timestamp
             (day, month, year) = [int(x) for x in findall(
-                '(\d+)', f.read(8).decode('utf-8'))]
+                r'(\d+)', f.read(8).decode('utf-8'))]
             (hour, minute, sec) = [int(x) for x in findall(
-                '(\d+)', f.read(8).decode('utf-8'))]
+                r'(\d+)', f.read(8).decode('utf-8'))]
             hdr['start_time'] = datetime(year + 2000, month, day, hour, minute,
                                          sec)
 

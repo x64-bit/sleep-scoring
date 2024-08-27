@@ -12,7 +12,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1440</width>
+    <width>1628</width>
     <height>872</height>
    </rect>
   </property>
@@ -4737,7 +4737,7 @@ display</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1440</width>
+     <width>1628</width>
      <height>24</height>
     </rect>
    </property>
@@ -4863,7 +4863,7 @@ display</string>
     <bool>true</bool>
    </property>
    <property name="checked">
-    <bool>true</bool>
+    <bool>false</bool>
    </property>
    <property name="text">
     <string>Quick settings</string>

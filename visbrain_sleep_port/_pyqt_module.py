@@ -28,7 +28,7 @@ class _PyQtModule(object):
     """
 
     def __init__(self, verbose=None, to_describe=None, icon=None,
-                 show_settings=True):
+                 show_settings=False):
         """Init."""
         # Log level and profiler creation (if verbose='debug')
         set_log_level(verbose)

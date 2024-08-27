@@ -1,7 +1,8 @@
 # Add README, LICENSE and requirements :
-include README.rst
+include VISBRAIN_README.rst
+include README.md
 include LICENSE
 include requirements.txt
 
 # Add url path :
-include visbrain/data_url.json
+include visbrain_sleep_port/data_url.json

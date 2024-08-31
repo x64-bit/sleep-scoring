@@ -4,18 +4,14 @@ import os
 from setuptools import setup, find_packages
 
 __version__ = "0.0.1"
-NAME = 'visbrain_sleep_port'
+NAME = 'sleep_scoring'
 AUTHOR = "Visbrain developers"
 MAINTAINER = "Anjo Pagdanganan"
 EMAIL = 'anjopag31@berkeley.edu'
 KEYWORDS = "brain MNI GPU visualization data OpenGL vispy neuroscience " + \
            "sleep data-mining"
-# DESCRIPTION = "Hardware-accelerated visualization suite for " + \
-#               "brain-data in Python"
-DESCRIPTION = "Standalone version of Sleep module from Visbrain suite"
-# URL = 'http://visbrain.org/'
-DOWNLOAD_URL = "https://github.com/EtienneCmb/visbrain/archive/" + \
-               "v" + __version__ + ".tar.gz"
+DESCRIPTION = "Standalone version of Sleep module from Visbrain suite."
+DOWNLOAD_URL = "https://github.com/x64-bit/sleep-scoring"
 # Data path :
 HERE = os.path.abspath(os.path.dirname(__file__))
 PACKAGE_DATA = {}
@@ -37,7 +33,6 @@ setup(
     author=AUTHOR,
     maintainer=MAINTAINER,
     author_email=EMAIL,
-    # url=URL,
     download_url=DOWNLOAD_URL,
     # PACKAGE / DATA
     packages=find_packages(),
@@ -68,11 +63,15 @@ setup(
                  'Intended Audience :: Education',
                  'Intended Audience :: Developers',
                  'Topic :: Scientific/Engineering :: Visualization',
-                 "Programming Language :: Python :: 3.5",
-                 "Programming Language :: Python :: 3.6",
-                 "Programming Language :: Python :: 3.7",
+                #  "Programming Language :: Python :: 3.5",
+                #  "Programming Language :: Python :: 3.6",
+                #  "Programming Language :: Python :: 3.7",
+                 "Programming Language :: Python :: 3.9",
+                 "Programming Language :: Python :: 3.10",
+                 "Programming Language :: Python :: 3.11",
+                 "Programming Language :: Python :: 3.12",
                  "Operating System :: MacOS",
-                 "Operating System :: POSIX :: Linux",
+                #  "Operating System :: POSIX :: Linux",
                  "Operating System :: Microsoft :: Windows",
                  "Natural Language :: English"
                  ])

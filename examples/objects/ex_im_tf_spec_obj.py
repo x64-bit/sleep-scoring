@@ -11,7 +11,7 @@ Use and control image, time-frequency maps and spectrogram.
 .. image:: ../../picture/picobjects/ex_imtfspec_obj.png
 """
 import numpy as np
-from visbrain_sleep_port.objects import (ImageObj, TimeFrequencyObj, ColorbarObj,
+from sleep_scoring.objects import (ImageObj, TimeFrequencyObj, ColorbarObj,
                               SceneObj)
 
 ###############################################################################

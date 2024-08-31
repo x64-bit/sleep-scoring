@@ -26,8 +26,8 @@ https://www.dropbox.com/s/bj1ra95rbksukro/sleep_edf.zip?dl=1
 import os
 import numpy as np
 
-from visbrain_sleep_port.gui import Sleep
-from visbrain_sleep_port.io import download_file, path_to_visbrain_data
+from sleep_scoring.gui import Sleep
+from sleep_scoring.io import download_file, path_to_visbrain_data
 
 from wonambi.detect.spindle import DetectSpindle, detect_Moelle2011
 from wonambi.detect.slowwave import DetectSlowWave, detect_Massimini2004

@@ -23,7 +23,7 @@ import sphinx_bootstrap_theme
 from sphinx_gallery.sorting import FileNameSortKey, ExplicitOrder
 from numpydoc import numpydoc, docscrape
 
-import visbrain_sleep_port
+import sleep_scoring
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the

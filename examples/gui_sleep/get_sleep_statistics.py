@@ -4,7 +4,7 @@ Get sleep statistics
 
 Get sleep statictics such as sleep stages duration, duration of the hypnogram.
 """
-from visbrain_sleep_port.io import download_file, get_sleep_stats
+from sleep_scoring.io import download_file, get_sleep_stats
 
 ###############################################################################
 # Hypnogram data

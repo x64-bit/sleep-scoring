@@ -4,7 +4,7 @@ Matplotlib plot of an hypnogram
 
 Plot a hypnogram using matplotlib.
 """
-from visbrain_sleep_port.io import write_fig_hyp, read_hypno, download_file
+from sleep_scoring.io import write_fig_hyp, read_hypno, download_file
 
 ###############################################################################
 # Plotting properties

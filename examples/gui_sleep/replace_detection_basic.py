@@ -22,8 +22,8 @@ https://www.dropbox.com/s/bj1ra95rbksukro/sleep_edf.zip?dl=1
 import os
 import numpy as np
 
-from visbrain_sleep_port.gui import Sleep
-from visbrain_sleep_port.io import download_file, path_to_visbrain_data
+from sleep_scoring.gui import Sleep
+from sleep_scoring.io import download_file, path_to_visbrain_data
 
 # Download the file :
 download_file('sleep_edf.zip', unzip=True, astype='example_data')

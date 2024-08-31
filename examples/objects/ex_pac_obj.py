@@ -19,7 +19,7 @@ import numpy as np
 
 from tensorpac.utils import pac_signals_wavelet
 
-from visbrain_sleep_port.objects import PacmapObj, SceneObj
+from sleep_scoring.objects import PacmapObj, SceneObj
 
 """Generate artificillly coupled signals :
 - First coupling between 10hz phase with a 80hz amplitude

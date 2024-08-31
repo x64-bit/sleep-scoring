@@ -1,4 +1,5 @@
-# sleep-scoring
+sleep-scoring
+#################
 
 **!! Under construction !!**
 
@@ -8,7 +9,8 @@ A copy of the relevant documentation is provided [in this repo](https://github.c
 
 Example code can be found under [examples/gui_sleep](https://github.com/x64-bit/sleep-scoring/tree/main/examples/gui_sleep)
 
-## Installation
+Installation
+=================
 
 It is recommended to install this in a virtual environment using conda. This package was developed on Python 3.12 but has been shown to work with Python >= 3.9.::
 
@@ -16,7 +18,8 @@ It is recommended to install this in a virtual environment using conda. This pac
 
 It is recommended to preface `pip` with `python -m` to ensure it uses the virtual environment's installation of python*
 
-## Deployment
+Deployment
+=================
 
 Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::
 
@@ -27,7 +30,8 @@ Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::
 
 You can either start Python in the terminal with the `python` command and write the commands there, or you can create a python script and run it.
 
-## Credits
+Credits
+=========
 Original authors:
 Etienne Combrisson, Raphael Vallat, and Christian O Reilly.
 

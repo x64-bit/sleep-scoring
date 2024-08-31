@@ -34,7 +34,7 @@ def _plt_src(name, kw_brain_obj, active_data, active_vert, sources,
              kw_source_obj, kw_activation, show):
     # Define a brain object and a source object :
     logger.info('    Define a Brain and Source objects')
-    from visbrain_sleep_port.objects import BrainObj, SourceObj, SceneObj
+    from sleep_scoring.objects import BrainObj, SourceObj, SceneObj
     brain_obj, source_obj = name + '_brain', name + '_sources'
     b_obj = BrainObj(brain_obj, **kw_brain_obj)
     s_obj = SourceObj(source_obj, sources, **kw_source_obj)
@@ -48,7 +48,7 @@ def _plt_src(name, kw_brain_obj, active_data, active_vert, sources,
     # Return either a scene or a BrainObj and SourceObj :
     if show is True:  # Display inside the Brain GUI
         # Define a Brain instance :
-        from visbrain_sleep_port.gui import Brain
+        from sleep_scoring.gui import Brain
         brain = Brain(brain_obj=b_obj, source_obj=s_obj)
         brain._brain_template.setEnabled(False)
         # By default, display colorbar if activation :

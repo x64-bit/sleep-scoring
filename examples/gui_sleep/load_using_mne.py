@@ -17,8 +17,8 @@ https://www.dropbox.com/s/t2bo9ufvc3f8mbj/sleep_brainvision.zip?dl=1
 """
 import os
 from mne import io
-from visbrain_sleep_port.gui import Sleep
-from visbrain_sleep_port.io import download_file, path_to_visbrain_data
+from sleep_scoring.gui import Sleep
+from sleep_scoring.io import download_file, path_to_visbrain_data
 
 ###############################################################################
 #                               LOAD YOUR FILE

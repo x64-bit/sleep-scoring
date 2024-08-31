@@ -2,7 +2,7 @@
 import numpy as np
 from vispy.scene.cameras import TurntableCamera
 
-from visbrain_sleep_port.utils.cameras import (FixedCam, FIXED_CAM, rotate_turntable,
+from sleep_scoring.utils.cameras import (FixedCam, FIXED_CAM, rotate_turntable,
                                     merge_cameras)
 
 

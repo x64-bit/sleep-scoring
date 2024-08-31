@@ -1,10 +1,10 @@
 """Test functions in read_annotations.py."""
 import numpy as np
 
-from visbrain_sleep_port.io.read_annotations import (annotations_to_array,
+from sleep_scoring.io.read_annotations import (annotations_to_array,
                                           merge_annotations)
-from visbrain_sleep_port.io.write_data import (write_csv, write_txt)
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.io.write_data import (write_csv, write_txt)
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 class TestReadAnnotations(_TestVisbrain):

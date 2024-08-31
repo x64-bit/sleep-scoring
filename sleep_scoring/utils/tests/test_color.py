@@ -1,7 +1,7 @@
 """Test functions in color.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.color import (color2vb, array2colormap, cmap_to_glsl,
+from sleep_scoring.utils.color import (color2vb, array2colormap, cmap_to_glsl,
                                   dynamic_color, color2faces, type_coloring,
                                   mpl_cmap, color2tuple, mpl_cmap_index,
                                   colorclip, Colormap)

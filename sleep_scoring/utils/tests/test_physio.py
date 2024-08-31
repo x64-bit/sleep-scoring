@@ -1,7 +1,7 @@
 """Test functions in physio.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.physio import (find_non_eeg, rereferencing, bipolarization,
+from sleep_scoring.utils.physio import (find_non_eeg, rereferencing, bipolarization,
                                    commonaverage, tal2mni, mni2tal,
                                    generate_eeg)
 

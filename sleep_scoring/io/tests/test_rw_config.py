@@ -1,6 +1,6 @@
 """Test functions in rw_config.py."""
-from visbrain_sleep_port.io.rw_config import save_config_json, load_config_json
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.io.rw_config import save_config_json, load_config_json
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 class TestRwConfig(_TestVisbrain):

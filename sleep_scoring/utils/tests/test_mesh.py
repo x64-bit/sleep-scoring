@@ -1,7 +1,7 @@
 """Test functions in mesh.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.mesh import (convert_meshdata, vispy_array, volume_to_mesh,
+from sleep_scoring.utils.mesh import (convert_meshdata, vispy_array, volume_to_mesh,
                                  mesh_edges, smoothing_matrix,
                                  laplacian_smoothing)
 

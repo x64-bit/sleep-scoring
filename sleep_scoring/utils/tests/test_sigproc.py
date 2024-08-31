@@ -4,7 +4,7 @@ from itertools import product
 
 from vispy.visuals.transforms import STTransform, NullTransform
 
-from visbrain_sleep_port.utils.sigproc import (normalize, derivative, tkeo, zerocrossing,
+from sleep_scoring.utils.sigproc import (normalize, derivative, tkeo, zerocrossing,
                                     power_of_ten, averaging, normalization,
                                     smoothing, smooth_3d)
 

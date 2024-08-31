@@ -1,10 +1,10 @@
 """Test functions in detections.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.sleep.detection import (kcdetect, spindlesdetect,
+from sleep_scoring.utils.sleep.detection import (kcdetect, spindlesdetect,
                                             remdetect, slowwavedetect,
                                             mtdetect, peakdetect)
-from visbrain_sleep_port.utils import generate_eeg
+from sleep_scoring.utils import generate_eeg
 
 """If tests continue to failed, one idea could be to save in a npz file the
 signal to test.

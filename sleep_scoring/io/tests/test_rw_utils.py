@@ -1,7 +1,7 @@
 """Test functions in rw_utils.py."""
 import numpy as np
-from visbrain_sleep_port.io.rw_utils import get_file_ext, safety_save
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.io.rw_utils import get_file_ext, safety_save
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 class TestRwUtils(_TestVisbrain):

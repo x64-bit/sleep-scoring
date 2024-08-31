@@ -1,8 +1,8 @@
 """Test functions in mneio.py."""
 import os
 
-from visbrain_sleep_port.io.mneio import mne_switch
-from visbrain_sleep_port.io import download_file, path_to_visbrain_data
+from sleep_scoring.io.mneio import mne_switch
+from sleep_scoring.io import download_file, path_to_visbrain_data
 
 
 class TestMneIO(object):

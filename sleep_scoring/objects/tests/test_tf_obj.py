@@ -1,8 +1,8 @@
 """Test TimeFrequencyObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
-from visbrain_sleep_port.objects import TimeFrequencyObj
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects import TimeFrequencyObj
 
 tf_obj = TimeFrequencyObj('TF', np.random.rand(1000))
 

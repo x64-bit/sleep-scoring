@@ -15,10 +15,10 @@ from vispy.color import Color
 from vispy.visuals.filters import Alpha
 
 from .marker import Markers
-from visbrain_sleep_port.utils import (color2vb, PrepareData, cmap_to_glsl)
-from visbrain_sleep_port.utils.sleep.event import _index_to_events
-from visbrain_sleep_port.visuals import TopoMesh, TFmapsMesh
-from visbrain_sleep_port.config import PROFILER
+from sleep_scoring.utils import (color2vb, PrepareData, cmap_to_glsl)
+from sleep_scoring.utils.sleep.event import _index_to_events
+from sleep_scoring.visuals import TopoMesh, TFmapsMesh
+from sleep_scoring.config import PROFILER
 
 logger = logging.getLogger('visbrain')
 

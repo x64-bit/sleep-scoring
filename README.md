@@ -1,12 +1,10 @@
-# Visbrain Sleep Port
+# sleep-scoring
 
 ## !! Under construction !!
 
 This is a modified version of Visbrain containing only the Sleep module.
 
-You can run the program from the .exe provided on the releases page, or you can check the examples folder to see how to deploy the code using python.
-
-The documentation provided covers all Visbrain modules, including those apart from Sleep.
+A copy of the rele documentation is provided [in this repo](https://github.com/x64-bit/sleep-scoring/tree/main/docs)
 
 Original authors:
 Etienne Combrisson, Raphael Vallat, and Christian O Reilly.

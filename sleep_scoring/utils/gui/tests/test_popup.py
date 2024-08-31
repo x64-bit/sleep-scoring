@@ -2,7 +2,7 @@
 import pytest
 from PyQt5 import QtWidgets
 
-from visbrain_sleep_port.utils.gui.popup import (ShortcutPopup, ScreenshotPopup, HelpMenu)
+from sleep_scoring.utils.gui.popup import (ShortcutPopup, ScreenshotPopup, HelpMenu)
 
 
 class TestPopup(object):

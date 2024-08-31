@@ -1,5 +1,5 @@
 """Test functions in others.py."""
-from visbrain_sleep_port.utils.others import (get_dsf, set_if_not_none)
+from sleep_scoring.utils.others import (get_dsf, set_if_not_none)
 
 
 class TestOthers(object):

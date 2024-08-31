@@ -1,7 +1,7 @@
 """Test functions in transform.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.transform import (vprescale, vprecenter, vpnormalize,
+from sleep_scoring.utils.transform import (vprescale, vprecenter, vpnormalize,
                                       array_to_stt, stt_to_array)
 
 

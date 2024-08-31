@@ -1,6 +1,6 @@
 """Screenshot window and related functions."""
-from visbrain_sleep_port.io import write_fig_pyqt, write_fig_canvas, dialog_save
-from visbrain_sleep_port.utils import ScreenshotPopup
+from sleep_scoring.io import write_fig_pyqt, write_fig_canvas, dialog_save
+from sleep_scoring.utils import ScreenshotPopup
 
 
 class UiScreenshot(object):

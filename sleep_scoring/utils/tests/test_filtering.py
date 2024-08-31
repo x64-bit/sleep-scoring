@@ -3,7 +3,7 @@ import numpy as np
 import math
 from itertools import product
 
-from visbrain_sleep_port.utils.filtering import (filt, morlet, ndmorlet, morlet_power,
+from sleep_scoring.utils.filtering import (filt, morlet, ndmorlet, morlet_power,
                                       welch_power, PrepareData)
 
 

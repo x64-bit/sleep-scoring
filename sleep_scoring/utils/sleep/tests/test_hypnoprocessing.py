@@ -1,7 +1,7 @@
 """Test functions in hypnoprocessing.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.sleep.hypnoprocessing import (transient, sleepstats)
+from sleep_scoring.utils.sleep.hypnoprocessing import (transient, sleepstats)
 
 
 class TestHypnoprocessing(object):

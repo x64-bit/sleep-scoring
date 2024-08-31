@@ -1,8 +1,8 @@
 """Test functions in rw_hypno.py."""
 import numpy as np
 
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
-from visbrain_sleep_port.io.rw_hypno import (hypno_time_to_sample, hypno_sample_to_time,
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.io.rw_hypno import (hypno_time_to_sample, hypno_sample_to_time,
                                   oversample_hypno, write_hypno, read_hypno)
 
 versions = dict(time=['.txt', '.csv', '.xlsx'], sample=['.txt', '.hyp'])

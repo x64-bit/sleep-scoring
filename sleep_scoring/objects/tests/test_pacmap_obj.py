@@ -1,8 +1,8 @@
 """Test PacmapObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
-from visbrain_sleep_port.objects import PacmapObj
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects import PacmapObj
 
 
 sig = np.random.rand(10000)

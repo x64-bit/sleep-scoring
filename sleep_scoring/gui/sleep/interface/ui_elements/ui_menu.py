@@ -4,8 +4,8 @@ import os
 import numpy as np
 from PyQt5 import QtWidgets
 
-from visbrain_sleep_port.utils import HelpMenu
-from visbrain_sleep_port.io import (dialog_save, dialog_load, write_fig_hyp, write_csv,
+from sleep_scoring.utils import HelpMenu
+from sleep_scoring.io import (dialog_save, dialog_load, write_fig_hyp, write_csv,
                          write_txt, write_hypno, read_hypno,
                          annotations_to_array, oversample_hypno,
                          save_config_json)

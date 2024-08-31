@@ -1,5 +1,5 @@
 """Test functions in dependancies.py."""
-from visbrain_sleep_port.io.dependencies import (is_mne_installed, is_nibabel_installed,
+from sleep_scoring.io.dependencies import (is_mne_installed, is_nibabel_installed,
                                       is_opengl_installed, is_pandas_installed,
                                       is_lspopt_installed,
                                       is_tensorpac_installed)

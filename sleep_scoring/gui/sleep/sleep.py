@@ -7,10 +7,10 @@ import vispy.scene.cameras as viscam
 
 from .interface import UiInit, UiElements
 from .visuals import Visuals
-from visbrain_sleep_port._pyqt_module import _PyQtModule
-from visbrain_sleep_port.utils import (FixedCam, color2vb, MouseEventControl)
-from visbrain_sleep_port.io import ReadSleepData
-from visbrain_sleep_port.config import PROFILER
+from sleep_scoring._pyqt_module import _PyQtModule
+from sleep_scoring.utils import (FixedCam, color2vb, MouseEventControl)
+from sleep_scoring.io import ReadSleepData
+from sleep_scoring.config import PROFILER
 
 logger = logging.getLogger('visbrain')
 

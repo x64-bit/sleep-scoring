@@ -3,7 +3,7 @@ from os import path
 
 from PyQt5 import QtWidgets
 
-from visbrain_sleep_port.utils import sleepstats
+from sleep_scoring.utils import sleepstats
 
 
 class UiInfo(object):

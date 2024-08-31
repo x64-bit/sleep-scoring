@@ -23,19 +23,19 @@ def test_import_pyqt():
 
 def test_import_brain():
     """Import the Brain module.."""
-    from visbrain_sleep_port.gui import Brain  # noqa
+    from sleep_scoring.gui import Brain  # noqa
 
 
 def test_import_sleep():
     """Import the Sleep module.."""
-    from visbrain_sleep_port.gui import Sleep  # noqa
+    from sleep_scoring.gui import Sleep  # noqa
 
 
 def test_import_signal():
     """Import the Signal module.."""
-    from visbrain_sleep_port.gui import Signal  # noqa
+    from sleep_scoring.gui import Signal  # noqa
 
 
 def test_import_figure():
     """Import the Figure module.."""
-    from visbrain_sleep_port.gui import Figure  # noqa
+    from sleep_scoring.gui import Figure  # noqa

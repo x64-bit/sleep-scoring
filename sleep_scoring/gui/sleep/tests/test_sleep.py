@@ -5,9 +5,9 @@ import numpy as np
 from vispy.app.canvas import MouseEvent, KeyEvent
 from vispy.util.keys import Key
 
-from visbrain_sleep_port.gui import Sleep
-from visbrain_sleep_port.io import download_file, path_to_visbrain_data
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.gui import Sleep
+from sleep_scoring.io import download_file, path_to_visbrain_data
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 # File to load :

@@ -1,8 +1,8 @@
 """Test VectorObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
-from visbrain_sleep_port.objects.vector_obj import VectorObj, CombineVectors
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects.vector_obj import VectorObj, CombineVectors
 
 
 n_arrows = 10

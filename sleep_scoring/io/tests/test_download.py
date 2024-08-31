@@ -1,6 +1,6 @@
 """Test functions in download.py."""
 # import pytest
-from visbrain_sleep_port.io.download import download_file
+from sleep_scoring.io.download import download_file
 
 
 class TestDownload(object):

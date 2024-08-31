@@ -1,9 +1,9 @@
 """Test the HypnogramObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects.hypno_obj import HypnogramObj
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
-from visbrain_sleep_port.io import path_to_visbrain_data
+from sleep_scoring.objects.hypno_obj import HypnogramObj
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.io import path_to_visbrain_data
 
 
 data = np.repeat(np.arange(6), 100) - 1.

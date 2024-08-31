@@ -1,10 +1,10 @@
 """Test function in read_data.py."""
 # import pytest
 
-from visbrain_sleep_port.io.read_data import (read_mat, read_pickle, read_npy, read_npz,  # noqa
+from sleep_scoring.io.read_data import (read_mat, read_pickle, read_npy, read_npz,  # noqa
                                    read_txt, read_csv, read_json,
                                    read_stc)
-from visbrain_sleep_port.io.download import download_file
+from sleep_scoring.io.download import download_file
 
 
 class TestReadData(object):

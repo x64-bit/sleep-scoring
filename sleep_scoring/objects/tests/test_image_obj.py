@@ -1,8 +1,8 @@
 """Test ImageObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects import ImageObj
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects import ImageObj
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
 
 im_data = np.random.rand(10, 20)
 im_obj = ImageObj('IM1', im_data)

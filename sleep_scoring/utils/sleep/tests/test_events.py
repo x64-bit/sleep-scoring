@@ -1,7 +1,7 @@
 """Test functions in events.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.sleep.event import (_events_distance_fill,
+from sleep_scoring.utils.sleep.event import (_events_distance_fill,
                                         _events_to_index, _index_to_events)
 
 

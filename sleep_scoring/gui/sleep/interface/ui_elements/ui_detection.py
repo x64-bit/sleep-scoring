@@ -3,9 +3,9 @@ import numpy as np
 from PyQt5 import QtWidgets, QtCore
 import logging
 
-from visbrain_sleep_port.utils import (remdetect, spindlesdetect, slowwavedetect,
+from sleep_scoring.utils import (remdetect, spindlesdetect, slowwavedetect,
                             kcdetect, peakdetect, mtdetect)
-from visbrain_sleep_port.utils.sleep.event import _events_to_index
+from sleep_scoring.utils.sleep.event import _events_to_index
 
 logger = logging.getLogger('visbrain')
 

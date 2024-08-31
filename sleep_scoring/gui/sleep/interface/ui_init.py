@@ -13,7 +13,7 @@ import vispy.visuals.transforms as vist
 
 from ..visuals.marker import Markers
 from .gui import Ui_MainWindow
-from visbrain_sleep_port.utils import color2vb
+from sleep_scoring.utils import color2vb
 
 
 class UiInit(QtWidgets.QMainWindow, Ui_MainWindow, app.Canvas):

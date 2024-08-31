@@ -1,7 +1,7 @@
 """Test methods in path."""
 import os
 
-from visbrain_sleep_port.io.path import (path_to_visbrain_data, get_data_url_path,
+from sleep_scoring.io.path import (path_to_visbrain_data, get_data_url_path,
                               path_to_tmp, clean_tmp, get_files_in_folders)
 
 

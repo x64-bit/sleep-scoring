@@ -2,9 +2,9 @@
 import pytest
 import vispy
 
-from visbrain_sleep_port.objects import VisbrainObject, CombineObjects
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.objects import VisbrainObject, CombineObjects
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 test_node = vispy.scene.Node(name='TestNode')

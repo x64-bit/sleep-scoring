@@ -1,7 +1,7 @@
 """Test functions in physio.py."""
 import numpy as np
 
-from visbrain_sleep_port.utils.picture import (piccrop, picresize)
+from sleep_scoring.utils.picture import (piccrop, picresize)
 
 
 class TestPicture(object):

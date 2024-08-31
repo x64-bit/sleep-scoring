@@ -2,10 +2,10 @@
 import numpy as np
 import pytest
 
-from visbrain_sleep_port.utils import generate_eeg
-from visbrain_sleep_port.io import (write_fig_hyp, write_fig_spindles,  # noqa
+from sleep_scoring.utils import generate_eeg
+from sleep_scoring.io import (write_fig_hyp, write_fig_spindles,  # noqa
                          write_fig_canvas, write_fig_pyqt)
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 class TestWriteImage(_TestVisbrain):

@@ -1,8 +1,8 @@
 """Test BrainObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects import TopoObj
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects import TopoObj
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
 
 
 # Topoplot :

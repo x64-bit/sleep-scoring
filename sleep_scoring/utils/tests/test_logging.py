@@ -1,7 +1,7 @@
 """Test functions in logging.py."""
 import logging
 
-from visbrain_sleep_port.utils.logging import set_log_level
+from sleep_scoring.utils.logging import set_log_level
 
 logger = logging.getLogger('visbrain')
 

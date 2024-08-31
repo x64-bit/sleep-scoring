@@ -3,9 +3,9 @@ import numpy as np
 # import pytest
 import vispy
 
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
-from visbrain_sleep_port.objects.scene_obj import VisbrainCanvas, SceneObj
-from visbrain_sleep_port.objects import SourceObj, ConnectObj, BrainObj, ImageObj
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.objects.scene_obj import VisbrainCanvas, SceneObj
+from sleep_scoring.objects import SourceObj, ConnectObj, BrainObj, ImageObj
 
 test_node = vispy.scene.Node(name='TestNode')
 camera = vispy.scene.cameras.TurntableCamera()

@@ -2,7 +2,7 @@
 import pytest
 from PyQt5 import QtWidgets, QtCore
 
-from visbrain_sleep_port.utils.guitools import (slider2opacity, textline2color,
+from sleep_scoring.utils.guitools import (slider2opacity, textline2color,
                                      color2json, ndsubplot,
                                      combo, is_color, MouseEventControl,
                                      disconnect_all, extend_combo_list,

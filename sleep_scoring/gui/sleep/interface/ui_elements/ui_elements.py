@@ -9,7 +9,7 @@ from .ui_detection import UiDetection
 from .ui_menu import UiMenu
 from .ui_annotate import UiAnnotate
 from .ui_screenshot import UiScreenshot
-from visbrain_sleep_port.config import PROFILER
+from sleep_scoring.config import PROFILER
 
 
 class UiElements(UiSettings, UiPanels, UiInfo, UiTools, UiScoring,

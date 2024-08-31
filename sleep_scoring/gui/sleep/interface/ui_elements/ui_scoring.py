@@ -2,7 +2,7 @@
 import numpy as np
 from PyQt5 import QtWidgets
 
-from visbrain_sleep_port.utils import transient
+from sleep_scoring.utils import transient
 
 
 class UiScoring(object):

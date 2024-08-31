@@ -10,7 +10,7 @@ from itertools import product
 from vispy import gloo, visuals
 from vispy.scene.visuals import create_visual_node, Text
 
-from visbrain_sleep_port.utils import color2vb, vispy_array, PrepareData, ndsubplot
+from sleep_scoring.utils import color2vb, vispy_array, PrepareData, ndsubplot
 
 
 __all__ = ('GridSignal')

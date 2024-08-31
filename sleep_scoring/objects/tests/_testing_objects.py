@@ -2,7 +2,7 @@
 # import pytest
 import vispy
 
-from visbrain_sleep_port.tests._tests_visbrain import _TestVisbrain
+from sleep_scoring.tests._tests_visbrain import _TestVisbrain
 
 
 class _TestObjects(_TestVisbrain):

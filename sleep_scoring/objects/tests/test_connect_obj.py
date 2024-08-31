@@ -1,8 +1,8 @@
 """Test ConnectObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects.connect_obj import ConnectObj, CombineConnect
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects.connect_obj import ConnectObj, CombineConnect
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
 
 
 n_sources = 20

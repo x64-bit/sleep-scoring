@@ -1,8 +1,8 @@
 """Test ColorbarObj."""
 import numpy as np
 
-from visbrain_sleep_port.objects.tests._testing_objects import _TestObjects
-from visbrain_sleep_port.objects import (SourceObj, ConnectObj, BrainObj, ImageObj,
+from sleep_scoring.objects.tests._testing_objects import _TestObjects
+from sleep_scoring.objects import (SourceObj, ConnectObj, BrainObj, ImageObj,
                               ColorbarObj)
 
 cbar_obj = ColorbarObj('cbar', cmap='inferno')

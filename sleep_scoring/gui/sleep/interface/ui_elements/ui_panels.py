@@ -4,9 +4,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 import numpy as np
 
 from ..ui_init import AxisCanvas, TimeAxis
-from visbrain_sleep_port.utils import mpl_cmap, color2vb
-from visbrain_sleep_port.config import PROFILER
-from visbrain_sleep_port.io.dependencies import is_lspopt_installed
+from sleep_scoring.utils import mpl_cmap, color2vb
+from sleep_scoring.config import PROFILER
+from sleep_scoring.io.dependencies import is_lspopt_installed
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8

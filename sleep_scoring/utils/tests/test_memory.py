@@ -1,6 +1,6 @@
 """Test functions in memory.py."""
 import numpy as np
-from visbrain_sleep_port.utils.memory import arrays_share_data, id, code_timer
+from sleep_scoring.utils.memory import arrays_share_data, id, code_timer
 
 
 class TestMemory(object):

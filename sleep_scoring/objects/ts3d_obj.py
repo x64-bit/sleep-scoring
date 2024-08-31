@@ -59,7 +59,7 @@ class TimeSeries3DObj(VisbrainObject):
     Examples
     --------
     >>> import numpy as np
-    >>> from visbrain_sleep_port.objects import TimeSeries3DObj
+    >>> from sleep_scoring.objects import TimeSeries3DObj
     >>> n_pts, n_ts = 100, 5
     >>> time = np.arange(n_pts)
     >>> phy = np.random.uniform(2, 30, (n_ts))

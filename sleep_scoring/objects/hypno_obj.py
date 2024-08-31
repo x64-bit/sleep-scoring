@@ -54,7 +54,7 @@ class HypnogramObj(VisbrainObject):
     Examples
     --------
     >>> import numpy as np
-    >>> from visbrain_sleep_port.objects import HypnogramObj
+    >>> from sleep_scoring.objects import HypnogramObj
     >>> data = np.repeat(np.arange(6), 100) - 1.
     >>> h_obj = HypnogramObj('hypno', data)
     >>> h_obj.preview(axis=True)

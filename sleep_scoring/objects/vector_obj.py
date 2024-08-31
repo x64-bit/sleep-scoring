@@ -99,7 +99,7 @@ class VectorObj(VisbrainObject):
     Examples
     --------
     >>> import numpy as np
-    >>> from visbrain_sleep_port.objects import VectorObj
+    >>> from sleep_scoring.objects import VectorObj
     >>> n_vector = 10
     >>> arrows = [np.random.rand(n_vector, 3), np.random.rand(n_vector, 3)]
     >>> data = np.random.uniform(-10, 10, (n_vector))

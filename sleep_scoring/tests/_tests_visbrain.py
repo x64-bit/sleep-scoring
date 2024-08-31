@@ -2,7 +2,7 @@
 import os
 import numpy as np
 
-from visbrain_sleep_port.io import download_file, path_to_visbrain_data
+from sleep_scoring.io import download_file, path_to_visbrain_data
 
 
 class _TestVisbrain(object):
@@ -12,7 +12,7 @@ class _TestVisbrain(object):
     NEEDED_FILES = {}
 
     def need_file(self, file):
-        """Path to a needed file from visbrain_sleep_port-data."""
+        """Path to a needed file from sleep_scoring-data."""
         return download_file(file, astype='example_data')
 
     def to_tmp_dir(self, file=None):

@@ -77,7 +77,7 @@ class ColorbarObj(VisbrainObject):
 
     Examples
     --------
-    >>> from visbrain_sleep_port.objects import ColorbarObj
+    >>> from sleep_scoring.objects import ColorbarObj
     >>> cb = ColorbarObj('cbar', cmap='viridis', clim=(4., 78.2), vmin=10.,
     >>>                  vmax=72., cblabel='Colorbar title', under='gray',
     >>>                  over='red', txtcolor='black', cbtxtsz=40, cbtxtsh=2.,

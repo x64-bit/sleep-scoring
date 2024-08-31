@@ -10,8 +10,8 @@ from vispy import gloo, visuals
 from vispy.visuals.shaders import Function
 from vispy.scene.visuals import create_visual_node
 
-from visbrain_sleep_port.utils import vispy_array, wrap_properties, color2vb, transient
-# from visbrain_sleep_port.io import is_opengl_installed
+from sleep_scoring.utils import vispy_array, wrap_properties, color2vb, transient
+# from sleep_scoring.io import is_opengl_installed
 
 
 __all__ = ('Hypnogram')

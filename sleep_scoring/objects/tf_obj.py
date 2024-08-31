@@ -94,7 +94,7 @@ class TimeFrequencyObj(ImageObj):
     Examples
     --------
     >>> import numpy as np
-    >>> from visbrain_sleep_port.objects import TimeFrequencyObj
+    >>> from sleep_scoring.objects import TimeFrequencyObj
     >>> n, sf = 512, 256  # number of time-points and sampling frequency
     >>> time = np.arange(n) / sf  # time vector
     >>> data = np.sin(2 * np.pi * 25. * time) + np.random.rand(n)

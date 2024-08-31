@@ -64,7 +64,7 @@ class ImageObj(VisbrainObject):
     Examples
     --------
     >>> import numpy as np
-    >>> from visbrain_sleep_port.objects import ImageObj
+    >>> from sleep_scoring.objects import ImageObj
     >>> n = 100
     >>> time = np.r_[np.arange(n - 1), np.arange(n)[::-1]]
     >>> time = time.reshape(-1, 1) + time.reshape(1, -1)

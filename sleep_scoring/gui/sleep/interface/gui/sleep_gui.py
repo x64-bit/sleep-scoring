@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3/visbrain_sleep_port/gui/sleep/interface/gui/sleep_gui.ui'
+# Form implementation generated from reading ui file '/Users/anjopagdanganan/visbrain-testing/port-visbrain-0.4.3/sleep_scoring/gui/sleep/interface/gui/sleep_gui.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.11
 #

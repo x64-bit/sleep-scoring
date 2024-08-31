@@ -10,21 +10,20 @@ Example code can be found under [examples/gui_sleep](https://github.com/x64-bit/
 
 ## Installation
 
-It is recommended to install this in a virtual environment using conda. This package was developed on Python 3.12 but has been shown to work with Python >= 3.9.
+It is recommended to install this in a virtual environment using conda. This package was developed on Python 3.12 but has been shown to work with Python >= 3.9.::
 
-```zsh
-python -m pip install sleep-scoring
-```
-*It is recommended to preface `pip` with `python -m` to ensure it uses the virtual environment's installation of python*
+    python -m pip install sleep-scoring 
+
+It is recommended to preface `pip` with `python -m` to ensure it uses the virtual environment's installation of python*
 
 ## Deployment
 
-Sleep can be deployed using this python script (see `examples/basic_sleep.py`):
-```python
-from sleep_scoring.gui import Sleep
+Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::
 
-Sleep().show()
-```
+    from sleep_scoring.gui import Sleep
+
+    Sleep().show()
+
 
 You can either start Python in the terminal with the `python` command and write the commands there, or you can create a python script and run it.
 

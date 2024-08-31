@@ -5,9 +5,9 @@ sleep-scoring
 
 This is a standalone version of Sleep from the Visbrain suite.
 
-A copy of the relevant documentation is provided [in this repo](https://github.com/x64-bit/sleep-scoring/blob/main/docs/sleep.rst), but can also be found at the [original Visbrain repo](https://github.com/EtienneCmb/visbrain/blob/master/docs/sleep.rst).
+A copy of the relevant documentation is provided `in this repo <https://github.com/x64-bit/sleep-scoring/blob/main/docs/sleep.rst>`_, but can also be found at the `original Visbrain repo <https://github.com/EtienneCmb/visbrain/blob/master/docs/sleep.rst>`_.
 
-Example code can be found under [examples/gui_sleep](https://github.com/x64-bit/sleep-scoring/tree/main/examples/gui_sleep)
+Example code can be found under `examples/gui_sleep <https://github.com/x64-bit/sleep-scoring/tree/main/examples/gui_sleep>`_
 
 Installation
 =================

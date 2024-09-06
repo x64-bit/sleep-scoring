@@ -21,7 +21,7 @@ It is recommended to install this in a virtual environment using conda. This pac
 
 It is recommended to preface `pip` with `python -m` to ensure it uses the virtual environment's installation of python*
 
-Deployment
+Start scoring
 =================
 
 Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::

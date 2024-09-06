@@ -33,9 +33,7 @@ Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::
 
 You can either start Python in the terminal with the `python` command and write the commands there, or you can create a python script and run it.
 
-Credits
+Citation
 =========
-Original authors:
-Etienne Combrisson, Raphael Vallat, and Christian O Reilly.
 
 Combrisson E, Vallat R, Eichenlaub J-B, O'Reilly C, Lajnef T, Guillot A, Ruby PM and Jerbi K (2017) Sleep: An Open-Source Python Software for Visualization, Analysis, and Staging of Sleep Data. Front. Neuroinform. 11:60. doi: 10.3389/fninf.2017.00060

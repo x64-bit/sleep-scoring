@@ -5,6 +5,7 @@ Sleep is a flexible open-source graphical user interface for visualization, anal
 It was originally developed by Etienne Combrisson in collaboration with Raphael Vallat and Christian O Reilly. 
 This standalone version was devleoped by Anjo Pagdanganan under the guidance of Omer Sharon at the Center for Human Sleep Sciene at UC Berkeley in order to allow direct installation in a contemporary python environment.
 It also includes some bug fixes and new features, such as:
+
 * Signal graph backgrounds colored according to hypnogram
 * Hypnogram live updates during scoring
 * Option to save old and new formats for hypnogram data

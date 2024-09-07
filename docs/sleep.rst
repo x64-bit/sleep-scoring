@@ -15,7 +15,7 @@ Checkout the API of the :class:`visbrain.Sleep` class. If you need help with the
 
 .. raw:: html
 
-    <img alt="docs/picsleep/sleep_main.png" src="docs/piclseep/sleep_main.png" align="center"></p>
+    <img alt="_images/sleep_main.png" src="_images/sleep_main.png" align="center"></p>
   </div>
 
 .. contents:: Contents

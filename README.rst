@@ -1,11 +1,19 @@
 sleep-scoring
-#################
+==================
 
-**!! Under construction !!**
+Sleep is a flexible open-source graphical user interface for visualization, analysis and scoring of polysomnographic sleep data. 
+It was originally developed by Etienne Combrisson in collaboration with Raphael Vallat and Christian O Reilly. 
+This standalone version was devleoped by Anjo Pagdanganan under the guidance of Omer Sharon at the Center for Human Sleep Sciene at UC Berkeley in order to allow direct installation in a contemporary python environment.
+It also includes some bug fixes and new features, such as:
 
-This is a standalone version of Sleep from the Visbrain suite.
+* Signal graph backgrounds colored according to hypnogram
+* Hypnogram live updates during scoring
+* Option to save old and new formats for hypnogram data
 
-A copy of the relevant documentation is provided `in this repo <https://github.com/x64-bit/sleep-scoring/blob/main/docs/sleep.rst>`_, but can also be found at the `original Visbrain repo <https://github.com/EtienneCmb/visbrain/blob/master/docs/sleep.rst>`_.
+.. image:: /docs/picture/picsleep/sleep_info.png
+
+A copy of the relevant documentation is provided `in this repo <https://github.com/x64-bit/sleep-scoring/blob/main/docs/sleep.rst>`_, but can also be found at the `original Visbrain repo <https://github.com/EtienneCmb/visbrain/blob/master/docs/sleep.rst>`_. 
+This copy contains not just the documentation for Sleep, but also the rest of Visbrain's documentation for archival purposes.
 
 Example code can be found under `examples/gui_sleep <https://github.com/x64-bit/sleep-scoring/tree/main/examples/gui_sleep>`_
 
@@ -16,9 +24,9 @@ It is recommended to install this in a virtual environment using conda. This pac
 
     python -m pip install sleep-scoring 
 
-It is recommended to preface `pip` with `python -m` to ensure it uses the virtual environment's installation of python*
+(It is recommended to preface `pip` with `python -m` to ensure it uses the virtual environment's installation of python)
 
-Deployment
+Start scoring
 =================
 
 Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::
@@ -30,9 +38,7 @@ Sleep can be deployed using this python script (see `examples/basic_sleep.py`)::
 
 You can either start Python in the terminal with the `python` command and write the commands there, or you can create a python script and run it.
 
-Credits
+Citation
 =========
-Original authors:
-Etienne Combrisson, Raphael Vallat, and Christian O Reilly.
 
 Combrisson E, Vallat R, Eichenlaub J-B, O'Reilly C, Lajnef T, Guillot A, Ruby PM and Jerbi K (2017) Sleep: An Open-Source Python Software for Visualization, Analysis, and Staging of Sleep Data. Front. Neuroinform. 11:60. doi: 10.3389/fninf.2017.00060
